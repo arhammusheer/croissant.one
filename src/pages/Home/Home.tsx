@@ -11,6 +11,7 @@ const Experience = lazy(() => import("./components/Experience"));
 const Projects = lazy(() => import("./components/Projects"));
 const Skills = lazy(() => import("./components/Skills"));
 const Footer = lazy(() => import("../common/Footer"));
+const Contact = lazy(() => import("./components/Contact"));
 
 export const Home = () => {
   return (
@@ -23,6 +24,7 @@ export const Home = () => {
         <Experience />
         <Projects />
         <Skills />
+        <Contact />
         <Footer />
       </Box>
     </Suspense>

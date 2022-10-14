@@ -176,4 +176,8 @@ export const me = {
       },
     },
   ],
+
+  contact: {
+    email: "arhammusheer@gmail.com",
+  },
 } as const;
