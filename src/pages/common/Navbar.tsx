@@ -105,8 +105,8 @@ const BottomSheet = ({
           <Stack spacing={4} divider={<StackDivider />} my={8}>
             {options.map((option) => (
               <Flex
-                as={"a"}
-                href={option.href}
+                as={Link}
+                to={option.href}
                 key={option.name}
                 onClick={onClose}
               >
