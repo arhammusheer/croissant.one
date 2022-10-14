@@ -20,14 +20,7 @@ export const Experience = () => {
         <Heading as={"h2"} fontSize={"3xl"}>
           Experience
         </Heading>
-        <Stack
-          direction={"column"}
-          spacing={4}
-          rowGap={4}
-          mt={8}
-          divider={<>•</>}
-          wrap={"wrap"}
-        >
+        <Stack direction={"column"} spacing={4} rowGap={4} mt={8} wrap={"wrap"}>
           {me.experience.map((experience) => (
             <SingleExperience {...experience} key={experience.company} />
           ))}
