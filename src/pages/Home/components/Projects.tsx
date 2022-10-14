@@ -7,6 +7,7 @@ import {
   Image,
   Stack,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { me } from "../../../me";
@@ -62,11 +63,11 @@ const SingleProject = ({
     <Stack
       direction={"column"}
       w={"full"}
-      bg={"blue.50"}
+      bg={useColorModeValue("blue.50", "gray.900")}
       p={6}
       borderRadius={"2xl"}
       border={"1px"}
-      borderColor={"blue.100"}
+      borderColor={useColorModeValue("blue.200", "gray.700")}
       as={motion.div}
       justify={"center"}
       whileHover={{
@@ -83,7 +84,11 @@ const SingleProject = ({
       }}
     >
       <Flex align={"center"} justify={"space-between"}>
-        <Heading as={"h3"} fontSize={"2xl"} color={"blue.700"}>
+        <Heading
+          as={"h3"}
+          fontSize={"2xl"}
+          color={useColorModeValue("blue.700", "white")}
+        >
           {name}
         </Heading>
         <Image src={image} h={"50px"} w={"50px"} borderRadius={"xl"} />

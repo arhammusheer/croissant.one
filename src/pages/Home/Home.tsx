@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 import { lazy, Suspense } from "react";
 import { Loader } from "../loading/Loader";
 
@@ -15,7 +15,7 @@ const Footer = lazy(() => import("../common/Footer"));
 export const Home = () => {
   return (
     <Suspense fallback={<Loader />}>
-      <Box scrollBehavior={"smooth"}>
+      <Box scrollBehavior={"smooth"} bg={useColorModeValue("white", "black")}>
         <Navbar />
         <Hero />
         <About />

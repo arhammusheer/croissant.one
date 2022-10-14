@@ -2,12 +2,6 @@ import {
   Avatar,
   Box,
   Container,
-  Drawer,
-  DrawerBody,
-  DrawerCloseButton,
-  DrawerContent,
-  DrawerHeader,
-  DrawerOverlay,
   Flex,
   IconButton,
   Stack,
@@ -20,24 +14,40 @@ import {
 import { FaHamburger } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { me } from "../../me";
+import { motion } from "framer-motion";
 
 export const Navbar = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Stack h={"10vh"} w={"full"} align={"center"} justify={"center"}>
-      <Container maxW={"container.xl"}>
-        <Flex justify={"space-between"}>
-          <Avatar
-            size={"md"}
-            src={me.image}
-            border={"1px"}
-            borderColor={useColorModeValue("blue.400", "gray.700")}
-          />
-          {isMobile ? <MobileOptions /> : <DesktopOptions />}
-        </Flex>
-      </Container>
-    </Stack>
+    <>
+      <Stack minH={"10vh"} w={"full"} align={"center"} justify={"center"}>
+        <Container maxW={"container.xl"}>
+          <Flex justify={"space-between"}>
+            <Avatar
+              size={"md"}
+              src={me.image}
+              border={"1px"}
+              borderColor={useColorModeValue("blue.400", "gray.700")}
+            />
+            {isMobile ? (
+              <>
+                <IconButton
+                  aria-label="Open menu"
+                  icon={<FaHamburger />}
+                  variant={"ghost"}
+                  onClick={isOpen ? onClose : onOpen}
+                />
+              </>
+            ) : (
+              <DesktopOptions />
+            )}
+          </Flex>
+        </Container>
+      </Stack>
+      <BottomSheet isOpen={isOpen} onClose={onClose} />
+    </>
   );
 };
 
@@ -52,12 +62,12 @@ const DesktopOptions = () => {
           to={option.href}
           smooth={true}
           cursor={"pointer"}
-          bg={"blue.50"}
+          bg={useColorModeValue("blue.50", "gray.700")}
           px={4}
           py={1}
           rounded={"md"}
           _hover={{
-            bg: "blue.100",
+            bg: useColorModeValue("blue.100", "gray.600"),
           }}
           transition={"all 0.2s ease-in-out"}
         >
@@ -73,22 +83,6 @@ const DesktopOptions = () => {
   );
 };
 
-const MobileOptions = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  return (
-    <>
-      <IconButton
-        aria-label="Open menu"
-        icon={<FaHamburger />}
-        variant={"ghost"}
-        onClick={onOpen}
-      />
-      <BottomSheet isOpen={isOpen} onClose={onClose} />
-    </>
-  );
-};
-
 const BottomSheet = ({
   isOpen,
   onClose,
@@ -97,26 +91,27 @@ const BottomSheet = ({
   onClose: () => void;
 }) => {
   return (
-    <Drawer isOpen={isOpen} placement={"bottom"} onClose={onClose}>
-      <DrawerOverlay />
-      <DrawerContent>
-        <DrawerCloseButton />
-        <DrawerBody>
-          <Stack spacing={4} divider={<StackDivider />} my={8}>
-            {options.map((option) => (
-              <Flex
-                as={Link}
-                to={option.href}
-                key={option.name}
-                onClick={onClose}
-              >
-                <Text fontWeight={"bold"}>{option.name}</Text>
-              </Flex>
-            ))}
-          </Stack>
-        </DrawerBody>
-      </DrawerContent>
-    </Drawer>
+    <motion.div
+      initial={{ height: 0, opacity: 0 }}
+      animate={{ height: isOpen ? 500 : 0, opacity: isOpen ? 1 : 0 }}
+    >
+      <Stack p={8} divider={<StackDivider />} spacing={4}>
+        {options.map((option) => (
+          <Box
+            w={"full"}
+            key={option.name}
+            h={"full"}
+            as={Link}
+            to={option.href}
+            smooth={true}
+            cursor={"pointer"}
+            onClick={onClose}
+          >
+            {option.name}
+          </Box>
+        ))}
+      </Stack>
+    </motion.div>
   );
 };
 
@@ -146,6 +141,5 @@ const options = [
     href: "skills",
   },
 ];
-
 
 export default Navbar;

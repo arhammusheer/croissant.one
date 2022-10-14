@@ -1,4 +1,10 @@
-import { Container, Divider, Stack, Text } from "@chakra-ui/react";
+import {
+  Container,
+  Divider,
+  Stack,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 
 export const Footer = () => {
   return (
@@ -10,7 +16,7 @@ export const Footer = () => {
         justify={"center"}
         direction={"column"}
         borderTop={"1px solid"}
-        borderTopColor={"gray.200"}
+        borderTopColor={useColorModeValue("gray.200", "gray.700")}
       >
         <Text fontWeight={"bold"}>Made with ❤️ by arhammusheer</Text>
         <Text>

@@ -1,4 +1,11 @@
-import { Box, Flex, Heading, Icon, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Icon,
+  Stack,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { IconType } from "react-icons";
 import { me } from "../../../me";
 
@@ -43,7 +50,7 @@ const SingleSkill = ({ name, icon }: { name: string; icon?: IconType }) => {
       direction={"row"}
       align={"center"}
       mx={3}
-      bg={"blue.50"}
+      bg={useColorModeValue("blue.100", "gray.900")}
       px={2}
       py={1}
       borderRadius={"xl"}

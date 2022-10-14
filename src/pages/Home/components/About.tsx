@@ -1,4 +1,12 @@
-import { Box, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { me } from "../../../me";
 
 export const About = () => {
@@ -7,7 +15,10 @@ export const About = () => {
       id="about"
       minH={"60vh"}
       w={"full"}
-      bgGradient={"linear(to-b, white, blue.200, white)"}
+      bgGradient={useColorModeValue(
+        "linear(to-b, white, blue.200, white)",
+        "linear(to-b, black, blue.800, black)"
+      )}
       align={"center"}
       justify={"center"}
     >
@@ -34,10 +45,10 @@ export const About = () => {
               base: "3xl",
               md: "4xl",
             }}
-            color={"gray.900"}
+            color={useColorModeValue("gray.800", "gray.100")}
           >
             I make things{" "}
-            <Text as={"span"} color={"blue.600"}>
+            <Text as={"span"} color={useColorModeValue("blue.600", "blue.300")}>
               for the web
             </Text>
           </Heading>
@@ -58,6 +69,5 @@ export const About = () => {
     </Flex>
   );
 };
-
 
 export default About;

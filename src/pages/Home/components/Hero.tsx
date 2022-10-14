@@ -55,7 +55,7 @@ export const Hero = () => {
           fontWeight={"normal"}
           as={"h1"}
           size={"3xl"}
-          color={"gray.900"}
+          color={useColorModeValue("blue.700", "gray.100")}
         >
           Hi, I'm {me.name}
         </Heading>
