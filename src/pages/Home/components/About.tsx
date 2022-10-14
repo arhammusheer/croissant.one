@@ -4,9 +4,9 @@ import { me } from "../../../me";
 export const About = () => {
   return (
     <Flex
-      h={"60vh"}
+      minH={"60vh"}
       w={"full"}
-      bgGradient={"linear(to-b, white, blue.200)"}
+      bgGradient={"linear(to-b, white, blue.200, white)"}
       align={"center"}
       justify={"center"}
     >

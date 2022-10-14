@@ -25,10 +25,13 @@ export const me = {
   image: "/assets/arhammusheer.jpeg",
   education: [
     {
-      degree: "Bachelors",
+      degree: "Bachelors of Science",
       major: "Computer Engineering",
-      institute: "University of Massachusetts Amherst",
+      school: "University of Massachusetts Amherst",
       graduation: "May 2024",
+      awards: [
+        "Chancellor's Award: $12,000"
+      ]
     },
   ],
   projects: [
@@ -38,11 +41,13 @@ export const me = {
       contribution:
         "I built the entire website from scratch using Next.js, TypeScript, and Chakra UI and deployed it on Netlify.",
       technologies: ["React", "Typescript", "Chakra-UI", "netlify"],
-      link: {
-        name: "Website",
-        uri: "https://croissant.one",
-      },
-      image: "https://croissant.one/assets/croissant.svg",
+      links: [
+        {
+          name: "Website",
+          uri: "https://croissant.one",
+        },
+      ],
+      image: "/assets/croissant.svg",
     },
     {
       name: "AudioShelf",
@@ -86,6 +91,7 @@ export const me = {
           uri: "https://dad.croissant.one/api/pickup",
         },
       ],
+      image: "/assets/dad.png",
     },
   ],
   skills: [
