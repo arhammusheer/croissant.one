@@ -4,6 +4,7 @@ import { me } from "../../../me";
 export const Education = () => {
   return (
     <Flex
+      id={"education"}
       minH={"50vh"}
       w={"full"}
       align={"center"}
@@ -20,7 +21,7 @@ export const Education = () => {
         </Heading>
         <Stack direction={"column"} spacing={4} mt={8}>
           {me.education.map((education) => (
-            <SingleEducation {...education} />
+            <SingleEducation key={education.school} {...education} />
           ))}
         </Stack>
       </Box>
@@ -54,7 +55,7 @@ const SingleEducation = ({
       </Heading>
       <Box h={"10px"} />
       {awards.map((award) => (
-        <Heading as={"h5"} fontSize={"md"} fontWeight={"normal"}>
+        <Heading as={"h5"} fontSize={"md"} fontWeight={"normal"} key={award}>
           {award}
         </Heading>
       ))}

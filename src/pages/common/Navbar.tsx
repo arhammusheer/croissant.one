@@ -18,6 +18,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { FaHamburger } from "react-icons/fa";
+import { Link } from "react-scroll";
 import { me } from "../../me";
 
 export const Navbar = () => {
@@ -47,8 +48,10 @@ const DesktopOptions = () => {
         <Flex
           align={"center"}
           key={option.name}
-          as={"a"}
-          href={option.href}
+          as={Link}
+          to={option.href}
+          smooth={true}
+          cursor={"pointer"}
           bg={"blue.50"}
           px={4}
           py={1}
@@ -120,22 +123,26 @@ const BottomSheet = ({
 const options = [
   {
     name: "Home",
-    href: "/",
+    href: "home",
   },
   {
     name: "About",
-    href: "/#about",
+    href: "about",
+  },
+  {
+    name: "Education",
+    href: "education",
+  },
+  {
+    name: "Experience",
+    href: "experience",
   },
   {
     name: "Projects",
-    href: "/#projects",
+    href: "projects",
   },
   {
     name: "Skills",
-    href: "/#skills",
-  },
-  {
-    name: "Contact",
-    href: "/#contact",
+    href: "skills",
   },
 ];

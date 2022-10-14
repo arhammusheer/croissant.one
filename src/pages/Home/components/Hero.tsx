@@ -21,6 +21,7 @@ export const Hero = () => {
 
   return (
     <Stack
+      id={"home"}
       w={"full"}
       h={"90vh"}
       spacing={0}

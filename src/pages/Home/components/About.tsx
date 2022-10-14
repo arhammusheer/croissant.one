@@ -4,6 +4,7 @@ import { me } from "../../../me";
 export const About = () => {
   return (
     <Flex
+      id="about"
       minH={"60vh"}
       w={"full"}
       bgGradient={"linear(to-b, white, blue.200, white)"}

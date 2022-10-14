@@ -29,9 +29,31 @@ export const me = {
       major: "Computer Engineering",
       school: "University of Massachusetts Amherst",
       graduation: "May 2024",
-      awards: [
-        "Chancellor's Award: $12,000"
-      ]
+      awards: ["Chancellor's Award: $12,000"],
+    },
+  ],
+  experience: [
+    {
+      company: "University of Massachusetts Amherst",
+      location: "Amherst, MA",
+      position: "IT Computer Classroom Assistant",
+      duration: "Fall 2021 - Present",
+      bullets: [
+        "Provided phone and in-person support for classroom technical issues.",
+        "Maintained and imaged the upkeep IT classroom computers.",
+      ],
+    },
+    {
+      company: "Cisco Systems",
+      location: "Bangalore, India",
+      position: "Front End Developer Intern - Talent Outreach Program",
+      duration: "Aug 2019 - Feb 2020",
+      bullets: [
+        "Collaborated with other team members to create an event management platform for high schools.",
+        "Developed a responsive design implementing a mobile-first approach.",
+        "Supported entire CRUD operations on the front end for the REST API.",
+        "Designed and developed a desktop and mobile UI dashboard for a Django WebApp.",
+      ],
     },
   ],
   projects: [
@@ -108,7 +130,7 @@ export const me = {
       icon: SiPython,
     },
     {
-      name: "C",
+      name: "Clang",
       icon: SiC,
     },
     {

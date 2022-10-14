@@ -15,6 +15,7 @@ import { FiExternalLink } from "react-icons/fi";
 export const Projects = () => {
   return (
     <Flex
+      id="projects"
       minH={"100vh"}
       w={"full"}
       align={"center"}
@@ -31,7 +32,7 @@ export const Projects = () => {
         </Heading>
         <Stack direction={"column"} spacing={4} mt={8}>
           {me.projects.map((project) => (
-            <SingleProject {...project} />
+            <SingleProject {...project} key={project.name} />
           ))}
         </Stack>
       </Box>
@@ -85,11 +86,13 @@ const SingleProject = ({
         <Heading as={"h3"} fontSize={"2xl"} color={"blue.700"}>
           {name}
         </Heading>
-        <Image src={image} h={"50px"} w={"50px"} borderRadius={"xl"}/>
+        <Image src={image} h={"50px"} w={"50px"} borderRadius={"xl"} />
       </Flex>
       <Stack direction={"row"} spacing={2} mt={4}>
         {links.map((link) => (
-          <OutLink href={link.uri}>{link.name}</OutLink>
+          <OutLink href={link.uri} key={link.name}>
+            {link.name}
+          </OutLink>
         ))}
       </Stack>
       <Text>{description}</Text>
