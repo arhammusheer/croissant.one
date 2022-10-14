@@ -1,18 +1,19 @@
 import {
-  FaReact,
-  FaNode,
   FaDocker,
-  FaGlobe,
   FaGithub,
   FaLinkedin,
+  FaNode,
+  FaReact,
 } from "react-icons/fa";
 import {
+  SiC,
   SiGooglecloud,
   SiJavascript,
   SiPython,
   SiTypescript,
-  SiC,
 } from "react-icons/si";
+
+import { IMe } from "./me.interface";
 
 export const me = {
   name: "Mohammad Arham",
@@ -180,4 +181,4 @@ export const me = {
   contact: {
     email: "arhammusheer@gmail.com",
   },
-} as const;
+} as IMe;
