@@ -61,8 +61,8 @@ export const me = {
       name: "Croissant.one (This Website)",
       description: "A website to showcase my projects and resume",
       contribution:
-        "I built the entire website from scratch using Next.js, TypeScript, and Chakra UI and deployed it on Netlify.",
-      technologies: ["React", "Typescript", "Chakra-UI", "netlify"],
+        "I built the entire website from scratch using React.js, TypeScript, and Chakra UI and deployed it on Vercel.",
+      technologies: ["React", "Typescript", "Chakra-UI", "Vercel"],
       links: [
         {
           name: "Website",
