@@ -15,6 +15,7 @@ import { FaHamburger } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { me } from "../../me";
 import { motion } from "framer-motion";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export const Navbar = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -32,14 +33,15 @@ export const Navbar = () => {
               borderColor={useColorModeValue("blue.400", "gray.700")}
             />
             {isMobile ? (
-              <>
+              <Box>
+                <ThemeSwitcher />
                 <IconButton
                   aria-label="Open menu"
                   icon={<FaHamburger />}
                   variant={"ghost"}
                   onClick={isOpen ? onClose : onOpen}
                 />
-              </>
+              </Box>
             ) : (
               <DesktopOptions />
             )}
@@ -79,6 +81,7 @@ const DesktopOptions = () => {
           </Text>
         </Flex>
       ))}
+      <ThemeSwitcher />
     </Stack>
   );
 };
