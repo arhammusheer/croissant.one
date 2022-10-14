@@ -55,3 +55,5 @@ const SingleSkill = ({ name, icon }: { name: string; icon?: IconType }) => {
     </Stack>
   );
 };
+
+export default Skills;

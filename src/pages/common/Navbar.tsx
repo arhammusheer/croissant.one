@@ -146,3 +146,6 @@ const options = [
     href: "skills",
   },
 ];
+
+
+export default Navbar;

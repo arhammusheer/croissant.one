@@ -130,3 +130,5 @@ const Social = ({
     </ChakraBox>
   );
 };
+
+export default Hero;

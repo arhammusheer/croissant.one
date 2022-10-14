@@ -1,24 +1,30 @@
-import { Navbar } from "../common/Navbar";
-import { About } from "./components/About";
-import { Education } from "./components/Education";
-import { Footer } from "../common/Footer";
-import { Hero } from "./components/Hero";
-import { Projects } from "./components/Projects";
-import { Skills } from "./components/Skills";
-import { Experience } from "./components/Experience";
 import { Box } from "@chakra-ui/react";
+import { lazy, Suspense } from "react";
+import { Loader } from "../loading/Loader";
+
+// Lazy Import
+const Navbar = lazy(() => import("../common/Navbar"));
+const Hero = lazy(() => import("./components/Hero"));
+const About = lazy(() => import("./components/About"));
+const Education = lazy(() => import("./components/Education"));
+const Experience = lazy(() => import("./components/Experience"));
+const Projects = lazy(() => import("./components/Projects"));
+const Skills = lazy(() => import("./components/Skills"));
+const Footer = lazy(() => import("../common/Footer"));
 
 export const Home = () => {
   return (
-    <Box scrollBehavior={"smooth"}>
-      <Navbar />
-      <Hero />
-      <About />
-      <Education />
-      <Experience />
-      <Projects />
-      <Skills />
-      <Footer />
-    </Box>
+    <Suspense fallback={<Loader />}>
+      <Box scrollBehavior={"smooth"}>
+        <Navbar />
+        <Hero />
+        <About />
+        <Education />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Footer />
+      </Box>
+    </Suspense>
   );
 };

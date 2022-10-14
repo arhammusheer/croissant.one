@@ -58,3 +58,6 @@ export const About = () => {
     </Flex>
   );
 };
+
+
+export default About;

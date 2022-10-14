@@ -62,3 +62,6 @@ const SingleEducation = ({
     </Stack>
   );
 };
+
+
+export default Education;

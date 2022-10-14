@@ -80,3 +80,5 @@ const SingleExperience = ({
     </Stack>
   );
 };
+
+export default Experience;

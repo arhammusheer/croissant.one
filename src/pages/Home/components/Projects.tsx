@@ -142,3 +142,5 @@ const OutLink = ({ children, href }: { children: string; href: string }) => {
     </Flex>
   );
 };
+
+export default Projects;
