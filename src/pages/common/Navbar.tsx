@@ -103,6 +103,7 @@ const BottomSheet = ({
             h={"full"}
             as={Link}
             to={option.href}
+            offset={-500}
             smooth={true}
             cursor={"pointer"}
             onClick={onClose}
