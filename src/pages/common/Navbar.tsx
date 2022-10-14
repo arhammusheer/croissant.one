@@ -55,7 +55,7 @@ export const Navbar = () => {
 
 const DesktopOptions = () => {
   return (
-    <Stack direction={"row"} spacing={6} align={"center"}>
+    <Stack direction={"row"} spacing={4} align={"center"}>
       {options.map((option) => (
         <Flex
           align={"center"}
@@ -143,6 +143,10 @@ const options = [
   {
     name: "Skills",
     href: "skills",
+  },
+  {
+    name: "Contact",
+    href: "contact",
   },
 ];
 
