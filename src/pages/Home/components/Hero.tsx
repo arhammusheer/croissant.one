@@ -28,6 +28,7 @@ export const Hero = () => {
       justifyContent={"center"}
       alignItems={"center"}
       bg={useColorModeValue("white", "black")}
+      zIndex={1}
       p={{
         base: 4,
         md: 12,

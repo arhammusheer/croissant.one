@@ -95,20 +95,24 @@ const BottomSheet = ({
 }) => {
   return (
     <motion.div
-      initial={{ height: 0, opacity: 0 }}
-      animate={{ height: isOpen ? 500 : 0, opacity: isOpen ? 1 : 0 }}
+      initial={{ height: 0, opacity: 0, zIndex: -1 }}
+      animate={{
+        height: isOpen ? 500 : 0,
+        opacity: isOpen ? 1 : 0,
+      }}
+      transition={{ duration: 0.5 }}
     >
-      <Stack p={8} divider={<StackDivider />} spacing={4}>
+      <Stack p={8} divider={<StackDivider />} spacing={4} zIndex={-1}>
         {options.map((option) => (
           <Box
             w={"full"}
             key={option.name}
             h={"full"}
             as={Link}
-            to={option.href}
+            to={isOpen ? option.href : ""}
             offset={-500}
             smooth={true}
-            cursor={"pointer"}
+            cursor={isOpen ? "pointer" : "default"}
             onClick={onClose}
           >
             {option.name}

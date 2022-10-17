@@ -9,6 +9,7 @@ import {
   SiC,
   SiGooglecloud,
   SiJavascript,
+  SiKubernetes,
   SiPython,
   SiTypescript,
 } from "react-icons/si";
@@ -150,6 +151,10 @@ export const me = {
     {
       name: "Google Cloud",
       icon: SiGooglecloud,
+    },
+    {
+      name: "Kubernetes",
+      icon: SiKubernetes,
     },
   ],
   social: [
