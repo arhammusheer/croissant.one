@@ -2,6 +2,8 @@ import {
   Avatar,
   Box,
   Flex,
+  Grid,
+  GridItem,
   Heading,
   Icon,
   Image,
@@ -31,11 +33,20 @@ export const Projects = () => {
         <Heading as={"h2"} fontSize={"3xl"}>
           Projects
         </Heading>
-        <Stack direction={"column"} spacing={4} mt={8}>
+        <Grid
+          mt={4}
+          templateColumns={{
+            base: "repeat(1, 1fr)",
+            md: me.projects.length > 2 ? "repeat(2, 1fr)" : "repeat(1, 1fr)",
+          }}
+          gap={6}
+        >
           {me.projects.map((project) => (
-            <SingleProject {...project} key={project.name} />
+            <GridItem>
+              <SingleProject {...project} key={project.name} />
+            </GridItem>
           ))}
-        </Stack>
+        </Grid>
       </Box>
     </Flex>
   );
@@ -63,6 +74,7 @@ const SingleProject = ({
     <Stack
       direction={"column"}
       w={"full"}
+      h={"full"}
       bg={useColorModeValue("blue.50", "gray.900")}
       p={6}
       borderRadius={"2xl"}
