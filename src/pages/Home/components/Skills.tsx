@@ -32,7 +32,6 @@ export const Skills = () => {
           spacing={4}
           rowGap={4}
           mt={8}
-          divider={<>•</>}
           wrap={"wrap"}
         >
           {me.skills.map((skill) => (

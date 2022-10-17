@@ -70,6 +70,10 @@ export const me = {
           name: "Website",
           uri: "https://croissant.one",
         },
+        {
+          name: "Github",
+          uri: "https://github.com/arhammusheer/croissant.one",
+        },
       ],
       image: "/assets/croissant.svg",
     },
@@ -114,8 +118,27 @@ export const me = {
           name: "Pickup Line Endpoint",
           uri: "https://dad.croissant.one/api/pickup",
         },
+        {
+          name: "Github",
+          uri: "https://github.com/arhammusheer/dad-api",
+        },
       ],
       image: "/assets/dad.png",
+    },
+    {
+      name: "Loud Noises",
+      description:
+        "A web app to play loud noises when you're in the same chat room as them. Press the big red button to play a list of sounds on their device. No registration required.",
+      contribution:
+        "Built a full stack app with socket.io and deployed it on Heroku.",
+      technologies: ["Node.js", "Express", "Socket.io", "Heroku", "Bootstrap"],
+      links: [
+        {
+          name: "Website",
+          uri: "https://loudnoises.herokuapp.com/",
+        },
+      ],
+      image: "/assets/big-red-button.svg",
     },
   ],
   skills: [

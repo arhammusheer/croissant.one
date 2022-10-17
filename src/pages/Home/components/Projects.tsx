@@ -107,9 +107,11 @@ const SingleProject = ({
       </Heading>
       <Text>{contribution}</Text>
       <Box h={5} />
-      <Stack direction={"row"} wrap={"wrap"} gap={1}>
+      <Stack direction={"row"} wrap={"wrap"} rowGap={3}>
         {technologies.map((technology) => (
-          <Pill key={technology}>{technology}</Pill>
+          <Box mx={2}>
+            <Pill key={technology}>{technology}</Pill>
+          </Box>
         ))}
       </Stack>
     </Stack>
