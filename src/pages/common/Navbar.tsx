@@ -100,7 +100,7 @@ const BottomSheet = ({
         height: isOpen ? 500 : 0,
         opacity: isOpen ? 1 : 0,
       }}
-      transition={{ duration: 0.5 }}
+      transition={{ }}
     >
       <Stack p={8} divider={<StackDivider />} spacing={4} zIndex={-1}>
         {options.map((option) => (

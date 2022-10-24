@@ -1,5 +1,8 @@
 import { Box, Flex, Heading, Icon, Stack } from "@chakra-ui/react";
+import { useAnimation, motion } from "framer-motion";
+import { useEffect } from "react";
 import { IconType } from "react-icons";
+import { useInView } from "react-intersection-observer";
 import { me } from "../../../me";
 
 export const Experience = () => {
@@ -43,34 +46,57 @@ const SingleExperience = ({
   duration: string;
   bullets: readonly string[];
 }) => {
+  const [ref, inView] = useInView();
+  const controls = useAnimation();
+
+  const variants = {
+    hidden: { opacity: 0, y: 20, transition: { duration: 1 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  };
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
   return (
-    <Stack
-      direction={"column"}
-      justify={"center"}
-      mx={3}
-      px={2}
-      py={1}
-      borderRadius={"xl"}
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={variants}
     >
-      <Heading as={"h3"} fontSize={"2xl"}>
-        {company}
-      </Heading>
-      <Heading as={"h4"} fontSize={"xl"} fontWeight={"normal"}>
-        {position}
-      </Heading>
-      <Heading as={"h5"} fontSize={"md"} fontWeight={"normal"}>
-        {duration}
-      </Heading>
-      <Heading as={"h5"} fontSize={"md"} fontWeight={"normal"}>
-        {location}
-      </Heading>
-      <Stack direction={"column"} />
-      {bullets.map((bullet) => (
-        <Heading as={"h5"} fontSize={"md"} fontWeight={"normal"} key={bullet}>
-          - {bullet}
+      <Stack
+        direction={"column"}
+        justify={"center"}
+        mx={3}
+        px={2}
+        py={1}
+        borderRadius={"xl"}
+      >
+        <Heading as={"h3"} fontSize={"2xl"}>
+          {company}
         </Heading>
-      ))}
-    </Stack>
+        <Heading as={"h4"} fontSize={"xl"} fontWeight={"normal"}>
+          {position}
+        </Heading>
+        <Heading as={"h5"} fontSize={"md"} fontWeight={"normal"}>
+          {duration}
+        </Heading>
+        <Heading as={"h5"} fontSize={"md"} fontWeight={"normal"}>
+          {location}
+        </Heading>
+        <Stack direction={"column"} />
+        {bullets.map((bullet) => (
+          <Heading as={"h5"} fontSize={"md"} fontWeight={"normal"} key={bullet}>
+            - {bullet}
+          </Heading>
+        ))}
+      </Stack>
+    </motion.div>
   );
 };
 
