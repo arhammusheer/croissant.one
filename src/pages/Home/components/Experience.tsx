@@ -24,8 +24,12 @@ export const Experience = () => {
           Experience
         </Heading>
         <Stack direction={"column"} spacing={4} rowGap={4} mt={8} wrap={"wrap"}>
-          {me.experience.map((experience) => (
-            <SingleExperience {...experience} key={experience.company} />
+          {me.experience.map((experience, index) => (
+            <SingleExperience
+              {...experience}
+              key={experience.company}
+              index={index}
+            />
           ))}
         </Stack>
       </Box>
@@ -39,19 +43,25 @@ const SingleExperience = ({
   position,
   duration,
   bullets,
+  index = 0,
 }: {
   company: string;
   location: string;
   position: string;
   duration: string;
   bullets: readonly string[];
+  index?: number;
 }) => {
   const [ref, inView] = useInView();
   const controls = useAnimation();
 
   const variants = {
     hidden: { opacity: 0, y: 20, transition: { duration: 1 } },
-    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, delay: index * 0.05 },
+    },
   };
 
   useEffect(() => {
