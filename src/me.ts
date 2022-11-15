@@ -36,13 +36,37 @@ export const me = {
   ],
   experience: [
     {
+      company: "AudioShelf",
+      location: "Amherst, MA",
+      position: "Co-Founder & CTO",
+      duration: "Feb 2022 - Present",
+      bullets: [
+        "Led the backend development pipeline and managed a team of 2 interns.",
+        "Developed the backend API and audio content delivery service using a microservices architecture on the Google Cloud Platform.",
+        "Developed a CMS dashboard and a supporting management API from scratch for content and user management and permissions using React.",
+        "Hosted the fully scalable serverless API on GCP Cloud run using docker, cloud builds, and cloud run which supported up to 200 concurrent users in production.",
+      ],
+    },
+    {
       company: "University of Massachusetts Amherst",
       location: "Amherst, MA",
       position: "IT Computer Classroom Assistant",
       duration: "Fall 2021 - Present",
       bullets: [
         "Provided phone and in-person support for classroom technical issues.",
-        "Maintained and imaged the upkeep IT classroom computers.",
+        "Supported the upkeep and maintenance of computer labs managed by IT.",
+        "Notify and resolve any issues affecting workflows in computer labs using a ticket system.",
+      ],
+    },
+    {
+      company: "University of Massachusetts Amherst",
+      location: "Amherst, MA",
+      position: "IT Technical Consultant",
+      duration: "Summer 2022",
+      bullets: [
+        "Dismantled and deployed several hundred computers using scripted deployments and OS installs on Windows and Mac machines all around the UMass Campus.",
+        "Performed maintenance and upkeep of about 12-15 computer labs around campus.",
+        "Added new machines to the network and tested several hundred machines for issues and raised service requests.",
       ],
     },
     {
@@ -59,6 +83,22 @@ export const me = {
     },
   ],
   projects: [
+    {
+      name: "Lord of the Lunchroom",
+      description:
+        "A project for HackUMass which let 2 people in a cowboy duel smart hats to see who wins the table in the wochester dining hall. The project won the funnest hack award.",
+      contribution:
+        "I wrote the code for the matchmaking server and the arduino smart hats which used infrared technology as guns and detectors and a displays to show the match status.",
+      image: "/assets/lord-of-the-lunchroom.jpg",
+      technologies: ["Node.js", "JavaScript", "ESP8266", "Arduino", "C++"],
+      links: [
+        {
+          name: "Devpost",
+          uri: "https://devpost.com/software/lord-of-the-lunchroom",
+        },
+        { name: "Image", uri: "/assets/lord-of-the-lunchroom.jpg" },
+      ],
+    },
     {
       name: "Croissant.one (This Website)",
       description: "A website to showcase my projects and resume",
