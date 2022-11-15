@@ -2,7 +2,9 @@ import {
   FaDocker,
   FaGithub,
   FaLinkedin,
+  FaNewspaper,
   FaNode,
+  FaPager,
   FaReact,
 } from "react-icons/fa";
 import {
@@ -221,11 +223,15 @@ export const me = {
     },
   ],
   social: [
-    // {
-    //   name: "Website",
-    //   icon: FaGlobe,
-    //   uri: "https://croissant.one",
-    // },
+    {
+      name: "Resume",
+      icon: FaNewspaper,
+      uri: "Mohammad-Arham-Resume.pdf",
+      hover: {
+        bg: "red.500",
+        color: "white",
+      },
+    },
     {
       name: "Github",
       icon: FaGithub,
