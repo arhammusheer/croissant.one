@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { ANALYTICS_MEASUREMENT_ID } from "./pages/analytics";
 import { Home } from "./pages/Home/Home";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 function App() {
   useEffect(() => {
@@ -27,8 +27,8 @@ function App() {
     );
 
     ReactGA.initialize(ANALYTICS_MEASUREMENT_ID);
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  });
+    ReactGA.send("pageview");
+  }, []);
 
   return <Home />;
 }
