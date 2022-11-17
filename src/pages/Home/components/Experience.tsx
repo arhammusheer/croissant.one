@@ -27,7 +27,7 @@ export const Experience = () => {
           {me.experience.map((experience, index) => (
             <SingleExperience
               {...experience}
-              key={experience.company}
+              key={`${experience.company}-${index}`}
               index={index}
             />
           ))}

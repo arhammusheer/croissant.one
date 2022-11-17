@@ -59,8 +59,8 @@ export const Projects = () => {
           }}
           gap={6}
         >
-          {projects.map((project) => (
-            <GridItem key={project.name}>
+          {projects.map((project, i) => (
+            <GridItem key={`project-${i}`}>
               <SingleProject {...project} />
             </GridItem>
           ))}
