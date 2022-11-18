@@ -63,7 +63,13 @@ export const Hero = () => {
         <Text fontSize={"2xl"}>{me.subtitle}</Text>
         <Text fontSize={"xl"}>{me.tagline}</Text>
         <Box mt={8} />
-        <Stack direction={"row"} spacing={2}>
+        <Stack
+          direction={"row"}
+          spacing={0}
+          wrap={"wrap"}
+          rowGap={2}
+          columnGap={2}
+        >
           {me.social.map((social) => (
             <Social
               key={social.name}

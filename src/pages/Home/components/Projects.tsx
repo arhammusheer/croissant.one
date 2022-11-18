@@ -64,13 +64,19 @@ export const Projects = () => {
               <SingleProject {...project} />
             </GridItem>
           ))}
-          <GridItem colSpan={2}>
+          <GridItem
+            colSpan={{
+              base: 1,
+              md: me.projects.length > 2 ? 2 : 1,
+            }}
+          >
             <Flex justify="center">
               <Button
                 onClick={handleShowMore}
                 colorScheme="blue"
                 disabled={!showMore}
                 hidden={!showMore}
+                
               >
                 Show More
               </Button>

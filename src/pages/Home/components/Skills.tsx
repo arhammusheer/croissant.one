@@ -30,7 +30,14 @@ export const Skills = () => {
         <Heading as={"h2"} fontSize={"3xl"}>
           Skills/Technologies
         </Heading>
-        <Stack direction={"row"} spacing={4} rowGap={4} mt={8} wrap={"wrap"}>
+        <Stack
+          direction={"row"}
+          spacing={0}
+          rowGap={2}
+          mt={8}
+          wrap={"wrap"}
+          columnGap={2}
+        >
           {me.skills.map((skill, index) => (
             <SingleSkill {...skill} key={skill.name} index={index} />
           ))}
