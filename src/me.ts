@@ -86,6 +86,39 @@ export const me = {
   ],
   projects: [
     {
+      name: "Croissant Chat",
+      description:
+        "A chat app which shows you chat rooms in a 5 mile radius to connect you with the community around you.",
+      contribution:
+        "I built the frontend client and backend infrastructure for the app using React.js, Node.js, and Prisma and PlanetScale. I also built an end to end websocket API implementing a pub/sub model. The platform is setup to autoscale using Google Cloud Run and Redis Pub/Sub.",
+      technologies: [
+        "React",
+        "Typescript",
+        "Node.js",
+        "Prisma",
+        "PlanetScale",
+        "Websockets",
+        "Docker",
+        "Redis",
+        "Google Cloud",
+      ],
+      links: [
+        {
+          name: "Website",
+          uri: "https://chat.croissant.one",
+        },
+        {
+          name: "Github (Frontend)",
+          uri: "https://github.com/arhammusheer/croissant-chat",
+        },
+        {
+          name: "Github (Backend)",
+          uri: "https://github.com/arhammusheer/croissant-chat-backend",
+        },
+      ],
+      image: "/assets/croissant-chat.png",
+    },
+    {
       name: "Lord of the Lunchroom",
       description:
         "A project for HackUMass which let 2 people in a cowboy duel smart hats to see who wins the table in the wochester dining hall. The project won the funnest hack award.",
@@ -100,6 +133,7 @@ export const me = {
         },
         { name: "Image", uri: "/assets/lord-of-the-lunchroom.jpg" },
       ],
+      
     },
     {
       name: "Croissant.one (This Website)",
