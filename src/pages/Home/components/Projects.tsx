@@ -18,21 +18,9 @@ import { FiExternalLink } from "react-icons/fi";
 import { useEffect, useState } from "react";
 
 export const Projects = () => {
-  const [projects, setProjects] = useState(me.projects.slice(0, 3));
+  const [projects, setProjects] = useState(me.projects);
   const [showCount, setShowCount] = useState(4);
   const [showMore, setShowMore] = useState(true);
-
-  const handleShowMore = () => {
-    setShowCount((prev) => prev + 4);
-
-    if (showCount >= me.projects.length - 1) {
-      setShowMore(false);
-    }
-  };
-
-  useEffect(() => {
-    setProjects(me.projects.slice(0, showCount));
-  }, [showCount]);
 
   return (
     <Flex
@@ -64,24 +52,6 @@ export const Projects = () => {
               <SingleProject {...project} />
             </GridItem>
           ))}
-          <GridItem
-            colSpan={{
-              base: 1,
-              md: me.projects.length > 2 ? 2 : 1,
-            }}
-          >
-            <Flex justify="center">
-              <Button
-                onClick={handleShowMore}
-                colorScheme="blue"
-                disabled={!showMore}
-                hidden={!showMore}
-                
-              >
-                Show More
-              </Button>
-            </Flex>
-          </GridItem>
         </Grid>
       </Box>
     </Flex>
