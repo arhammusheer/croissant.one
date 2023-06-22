@@ -38,10 +38,21 @@ export const me = {
   ],
   experience: [
     {
+      company: "CarGurus",
+      location: "Cambridge, MA",
+      position: "Engineering Co-op, Platform as a Service",
+      duration: "Jan 2023 - June 2023",
+      bullets: [
+        "Worked on an internal CLI tool using Golang and Kubernetes to automate the deployment and management of infrastructure, resulting in a significant reduction in deployment time and increased efficiency in managing resources",
+        "Collaborated with developers across teams and followed Scrum and Agile practices to deliver features and fix bugs in a timely manner",
+        "Wrote an internal documentation chatbot using semantic search and GPT4 API which intended to increase productivity across teams"
+      ],
+    },
+    {
       company: "AudioShelf",
       location: "Amherst, MA",
       position: "Co-Founder & CTO",
-      duration: "Feb 2022 - Present",
+      duration: "Feb 2022 - March 2023",
       bullets: [
         "Led the backend development pipeline and managed a team of 2 interns.",
         "Developed the backend API and audio content delivery service using a microservices architecture on the Google Cloud Platform.",
@@ -133,7 +144,6 @@ export const me = {
         },
         { name: "Image", uri: "/assets/lord-of-the-lunchroom.jpg" },
       ],
-      
     },
     {
       name: "Croissant.one (This Website)",
