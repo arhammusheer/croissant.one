@@ -197,6 +197,10 @@ export const me = {
       technologies: ["Node.js", "Express", "Google Cloud", "Docker"],
       links: [
         {
+          name: "Try It Out",
+          uri: "https://dad.croissant.one",
+        },
+        {
           name: "Joke Endpoint",
           uri: "https://dad.croissant.one/api/joke",
         },
