@@ -97,38 +97,64 @@ export const me = {
   ],
   projects: [
     {
-      name: "Croissant Chat",
+      name: "AudioShelf",
       description:
-        "A chat app which shows you chat rooms in a 5 mile radius to connect you with the community around you.",
+        "A mobile app with over 2k users to discover audiobooks in 30 languages and summarize them in 5 minutes",
       contribution:
-        "I built the frontend client and backend infrastructure for the app using React.js, Node.js, and Prisma and PlanetScale. I also built an end to end websocket API implementing a pub/sub model. The platform is setup to autoscale using Google Cloud Run and Redis Pub/Sub.",
+        "I built the backend infrastructure for the app including authentication systems, OAuth Scope and a REST API. I also built an internal CMS dashboard to manage content publishing and translations.",
       technologies: [
-        "React",
-        "Typescript",
         "Node.js",
-        "Prisma",
-        "PlanetScale",
-        "Websockets",
-        "Docker",
-        "Redis",
+        "Express",
+        "MongoDB",
         "Google Cloud",
+        "Docker",
+        "OAuth2",
       ],
       links: [
         {
           name: "Website",
-          uri: "https://chat.croissant.one",
+          uri: "https://getaudioshelf.com",
         },
         {
-          name: "Github (Frontend)",
-          uri: "https://github.com/arhammusheer/croissant-chat",
-        },
-        {
-          name: "Github (Backend)",
-          uri: "https://github.com/arhammusheer/croissant-chat-backend",
+          name: "Play Store",
+          uri: "https://play.google.com/store/apps/details?id=com.audioshelfapp",
         },
       ],
-      image: "/assets/croissant-chat.png",
+      image: "https://content.getaudioshelf.com/logo.png",
     },
+    // {
+    //   name: "Croissant Chat",
+    //   description:
+    //     "A chat app which shows you chat rooms in a 5 mile radius to connect you with the community around you.",
+    //   contribution:
+    //     "I built the frontend client and backend infrastructure for the app using React.js, Node.js, and Prisma and PlanetScale. I also built an end to end websocket API implementing a pub/sub model. The platform is setup to autoscale using Google Cloud Run and Redis Pub/Sub.",
+    //   technologies: [
+    //     "React",
+    //     "Typescript",
+    //     "Node.js",
+    //     "Prisma",
+    //     "PlanetScale",
+    //     "Websockets",
+    //     "Docker",
+    //     "Redis",
+    //     "Google Cloud",
+    //   ],
+    //   links: [
+    //     {
+    //       name: "Website",
+    //       uri: "https://chat.croissant.one",
+    //     },
+    //     {
+    //       name: "Github (Frontend)",
+    //       uri: "https://github.com/arhammusheer/croissant-chat",
+    //     },
+    //     {
+    //       name: "Github (Backend)",
+    //       uri: "https://github.com/arhammusheer/croissant-chat-backend",
+    //     },
+    //   ],
+    //   image: "/assets/croissant-chat.png",
+    // },
     {
       name: "Lord of the Lunchroom",
       description:
@@ -164,32 +190,6 @@ export const me = {
       image: "/assets/croissant.svg",
     },
     {
-      name: "AudioShelf",
-      description:
-        "A mobile app with over 2k users to discover audiobooks in 30 languages and summarize them in 5 minutes",
-      contribution:
-        "I built the backend infrastructure for the app including authentication systems, OAuth Scope and a REST API. I also built an internal CMS dashboard to manage content publishing and translations.",
-      technologies: [
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Google Cloud",
-        "Docker",
-        "OAuth2",
-      ],
-      links: [
-        {
-          name: "Website",
-          uri: "https://getaudioshelf.com",
-        },
-        {
-          name: "Play Store",
-          uri: "https://play.google.com/store/apps/details?id=com.audioshelfapp",
-        },
-      ],
-      image: "https://content.getaudioshelf.com/logo.png",
-    },
-    {
       name: "Dad API",
       description: "A REST API to get dad jokes and pickup lines",
       contribution:
@@ -215,21 +215,21 @@ export const me = {
       ],
       image: "/assets/dad.png",
     },
-    {
-      name: "Loud Noises",
-      description:
-        "A web app to play loud noises when you're in the same chat room as them. Press the big red button to play a list of sounds on their device. No registration required.",
-      contribution:
-        "Built a full stack app with socket.io and deployed it on Heroku.",
-      technologies: ["Node.js", "Express", "Socket.io", "Heroku", "Bootstrap"],
-      links: [
-        {
-          name: "Website",
-          uri: "https://loudnoises.herokuapp.com/",
-        },
-      ],
-      image: "/assets/big-red-button.svg",
-    },
+    // {
+    //   name: "Loud Noises",
+    //   description:
+    //     "A web app to play loud noises when you're in the same chat room as them. Press the big red button to play a list of sounds on their device. No registration required.",
+    //   contribution:
+    //     "Built a full stack app with socket.io and deployed it on Heroku.",
+    //   technologies: ["Node.js", "Express", "Socket.io", "Heroku", "Bootstrap"],
+    //   links: [
+    //     {
+    //       name: "Website",
+    //       uri: "https://loudnoises.herokuapp.com/",
+    //     },
+    //   ],
+    //   image: "/assets/big-red-button.svg",
+    // },
   ],
   skills: [
     {
