@@ -32,7 +32,7 @@ export const me = {
       degree: "Bachelors of Science",
       major: "Computer Engineering",
       school: "University of Massachusetts Amherst",
-      graduation: "May 2024",
+      graduation: "December 2024",
       awards: ["Chancellor's Award: $12,000"],
     },
   ],
