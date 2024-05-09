@@ -45,7 +45,7 @@ export const me = {
       bullets: [
         "Worked on an internal CLI tool using Golang and Kubernetes to automate the deployment and management of infrastructure, resulting in a significant reduction in deployment time and increased efficiency in managing resources",
         "Collaborated with developers across teams and followed Scrum and Agile practices to deliver features and fix bugs in a timely manner",
-        "Wrote an internal documentation chatbot using semantic search and GPT4 API which intended to increase productivity across teams"
+        "Wrote an internal documentation chatbot using semantic search and GPT4 API which intended to increase productivity across teams",
       ],
     },
     {
@@ -122,39 +122,24 @@ export const me = {
       ],
       image: "https://content.getaudioshelf.com/logo.png",
     },
-    // {
-    //   name: "Croissant Chat",
-    //   description:
-    //     "A chat app which shows you chat rooms in a 5 mile radius to connect you with the community around you.",
-    //   contribution:
-    //     "I built the frontend client and backend infrastructure for the app using React.js, Node.js, and Prisma and PlanetScale. I also built an end to end websocket API implementing a pub/sub model. The platform is setup to autoscale using Google Cloud Run and Redis Pub/Sub.",
-    //   technologies: [
-    //     "React",
-    //     "Typescript",
-    //     "Node.js",
-    //     "Prisma",
-    //     "PlanetScale",
-    //     "Websockets",
-    //     "Docker",
-    //     "Redis",
-    //     "Google Cloud",
-    //   ],
-    //   links: [
-    //     {
-    //       name: "Website",
-    //       uri: "https://chat.croissant.one",
-    //     },
-    //     {
-    //       name: "Github (Frontend)",
-    //       uri: "https://github.com/arhammusheer/croissant-chat",
-    //     },
-    //     {
-    //       name: "Github (Backend)",
-    //       uri: "https://github.com/arhammusheer/croissant-chat-backend",
-    //     },
-    //   ],
-    //   image: "/assets/croissant-chat.png",
-    // },
+    {
+      name: "Bus Tracker IoT",
+      description:
+        "An always connected IoT device which let's me track when the next bus will leave my stop helping me save time and plan better every morning.",
+      contribution:
+        "I built the entire IoT device from scratch using an ESP32, Write a relay server in Node.js and pulled data from the UMass Transit API to display the next bus time.",
+      technologies: [
+        "Node.js",
+        "TypeScript",
+        "ESP32",
+        "Arduino",
+        "C++",
+        "Google Cloud",
+      ],
+      links: [{ name: "Image", uri: "/assets/bus-tracker.jpg" }],
+      image: "/assets/bus-tracker.jpg",
+      backgroundImage: "/assets/bus-tracker.jpg",
+    },
     {
       name: "Lord of the Lunchroom",
       description:
@@ -162,6 +147,7 @@ export const me = {
       contribution:
         "I wrote the code for the matchmaking server and the arduino smart hats which used infrared technology as guns and detectors and a displays to show the match status.",
       image: "/assets/lord-of-the-lunchroom.jpg",
+      backgroundImage: "/assets/lord-of-the-lunchroom.jpg",
       technologies: ["Node.js", "JavaScript", "ESP8266", "Arduino", "C++"],
       links: [
         {

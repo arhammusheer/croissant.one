@@ -65,6 +65,7 @@ const SingleProject = ({
   technologies,
   links,
   image,
+  backgroundImage,
 }: {
   name: string;
   description: string;
@@ -75,16 +76,21 @@ const SingleProject = ({
     uri: string;
   }[];
   image: string;
+  backgroundImage?: string;
 }) => {
+  const overlay = useColorModeValue(
+    "linear(to-r, blue.50, whiteAlpha.700)",
+    "linear(to-t, blackAlpha.900, blackAlpha.700)"
+  );
+  const bg = useColorModeValue("blue.50", "gray.900");
   return (
     <Stack
       direction={"column"}
       w={"full"}
       h={"full"}
-      bg={useColorModeValue("blue.50", "gray.900")}
-      p={6}
       borderRadius={"2xl"}
       border={"1px"}
+      bg={bg}
       borderColor={useColorModeValue("blue.200", "gray.700")}
       as={motion.div}
       justify={"center"}
@@ -100,38 +106,49 @@ const SingleProject = ({
           duration: 0.2,
         },
       }}
+      // Image background
+      bgImage={`url(${backgroundImage})`}
+      bgSize={"cover"}
+      bgPosition={"center"}
+      bgRepeat={"no-repeat"}
     >
-      <Flex align={"center"} justify={"space-between"}>
-        <Heading
-          as={"h3"}
-          fontSize={"2xl"}
-          color={useColorModeValue("blue.700", "white")}
-        >
-          {name}
+      <Box
+        h={"full"}
+        w={"full"}
+        bgGradient={backgroundImage ? overlay : ""}
+        p={4}
+        borderRadius={"2xl"}
+      >
+        <Flex align={"center"} justify={"space-between"} w={"full"}>
+          <Heading
+            as={"h3"}
+            fontSize={"2xl"}
+            color={useColorModeValue("blue.700", "white")}
+          >
+            {name}
+          </Heading>
+          <Image src={image} h={"50px"} w={"50px"} borderRadius={"xl"} />
+        </Flex>
+        <Stack direction={"row"} spacing={2} mt={4}>
+          {links.map((link) => (
+            <OutLink href={link.uri} key={link.name}>
+              {link.name}
+            </OutLink>
+          ))}
+        </Stack>
+        <Text>{description}</Text>
+        <Box h={2} />
+        <Heading as={"h4"} fontSize={"lg"} color={"blue.600"}>
+          What I did
         </Heading>
-        <Image src={image} h={"50px"} w={"50px"} borderRadius={"xl"} />
-      </Flex>
-      <Stack direction={"row"} spacing={2} mt={4}>
-        {links.map((link) => (
-          <OutLink href={link.uri} key={link.name}>
-            {link.name}
-          </OutLink>
-        ))}
-      </Stack>
-      <Text>{description}</Text>
-      <Box h={2} />
-      <Heading as={"h4"} fontSize={"lg"} color={"blue.600"}>
-        What I did
-      </Heading>
-      <Text>{contribution}</Text>
-      <Box h={5} />
-      <Stack direction={"row"} wrap={"wrap"} rowGap={3}>
-        {technologies.map((technology) => (
-          <Box mx={2}>
+        <Text>{contribution}</Text>
+        <Box h={5} />
+        <Stack direction={"row"} wrap={"wrap"} rowGap={3}>
+          {technologies.map((technology) => (
             <Pill key={technology}>{technology}</Pill>
-          </Box>
-        ))}
-      </Stack>
+          ))}
+        </Stack>
+      </Box>
     </Stack>
   );
 };

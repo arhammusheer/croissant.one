@@ -38,6 +38,7 @@ interface IProject {
   technologies: string[];
   links: ILink[];
   image: string;
+  backgroundImage?: string;
 }
 
 interface ISkill {
