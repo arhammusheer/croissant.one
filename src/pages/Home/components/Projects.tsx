@@ -129,7 +129,7 @@ const SingleProject = ({
           </Heading>
           <Image src={image} h={"50px"} w={"50px"} borderRadius={"xl"} />
         </Flex>
-        <Stack direction={"row"} spacing={2} mt={4}>
+        <Stack direction={"row"} spacing={2} my={2} wrap={"wrap"}>
           {links.map((link) => (
             <OutLink href={link.uri} key={link.name}>
               {link.name}
