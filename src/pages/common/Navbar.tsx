@@ -31,6 +31,7 @@ export const Navbar = () => {
               src={me.image}
               border={"1px"}
               borderColor={useColorModeValue("blue.400", "gray.700")}
+              alt-text={`${me.name} profile picture`}
             />
             {isMobile ? (
               <Box>

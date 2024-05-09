@@ -51,7 +51,12 @@ export const Hero = () => {
         }}
         justify={"center"}
       >
-        <Avatar size={"xl"} src={me.image} border={"2px"} />
+        <Avatar
+          size={"xl"}
+          src={me.image}
+          border={"2px"}
+          alt-text={"Profile picture"}
+        />
         <Heading
           fontWeight={"normal"}
           as={"h1"}
