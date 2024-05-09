@@ -127,7 +127,6 @@ const SingleProject = ({
           >
             {name}
           </Heading>
-          // Keep aspect ratio
           <Image src={image} h={"50px"} w={"50px"} borderRadius={"xl"} objectFit={"cover"} />
         </Flex>
         <Stack direction={"row"} spacing={2} my={2} wrap={"wrap"}>
