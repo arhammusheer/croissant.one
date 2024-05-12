@@ -4,6 +4,7 @@ import {
   Heading,
   Icon,
   Stack,
+  Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { useAnimation, motion } from "framer-motion";
@@ -11,6 +12,7 @@ import { useEffect } from "react";
 import { IconType } from "react-icons";
 import { useInView } from "react-intersection-observer";
 import { me } from "../../../me";
+import { TbArrowWaveLeftUp } from "react-icons/tb";
 
 export const Skills = () => {
   return (
@@ -26,7 +28,7 @@ export const Skills = () => {
         md: 16,
       }}
     >
-      <Box w={"full"}>
+      <Stack w={"full"} spacing={4}>
         <Heading as={"h2"} fontSize={"3xl"}>
           Skills/Technologies
         </Heading>
@@ -42,8 +44,26 @@ export const Skills = () => {
             <SingleSkill {...skill} key={skill.name} index={index} />
           ))}
         </Stack>
-      </Box>
+        <TryDraggingMe />
+      </Stack>
     </Flex>
+  );
+};
+
+const TryDraggingMe = () => {
+  return (
+    <Stack
+      w={"full"}
+      p={2}
+      justify={"flex-end"}
+      direction={"row"}
+      align={"center"}
+    >
+      <Icon as={TbArrowWaveLeftUp} h={12} w={12} />
+      <Text fontSize={"xl"} fontWeight={"bold"} fontFamily={"Short Stack"}>
+        Try dragging me!
+      </Text>
+    </Stack>
   );
 };
 
@@ -64,7 +84,12 @@ const SingleSkill = ({
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.5, delay: index * 0.05 },
+      transition: {
+        duration: 0.5,
+        delay: index * 0.05,
+        type: "spring",
+        stiffness: 100,
+      },
     },
   };
 
@@ -82,6 +107,11 @@ const SingleSkill = ({
       animate={controls}
       initial="hidden"
       variants={variants}
+      drag
+      dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+      dragElastic={0.4}
+      // Drag Spring
+      dragTransition={{ bounceStiffness: 1000, bounceDamping: 20 }}
     >
       <Stack
         direction={"row"}
