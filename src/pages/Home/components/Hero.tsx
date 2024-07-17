@@ -4,6 +4,7 @@ import {
   chakra,
   Heading,
   Icon,
+  Image,
   shouldForwardProp,
   Stack,
   Text,
@@ -50,24 +51,40 @@ export const Hero = () => {
           md: 12,
         }}
         justify={"center"}
+        spacing={8}
       >
-        <Avatar
-          size={"xl"}
+        <Image
+          rounded={"full"}
+          boxSize={{
+            base: "200px",
+            md: "150px",
+          }}
           src={me.image}
           border={"2px"}
           alt-text={"Profile picture"}
         />
-        <Heading
-          fontWeight={"normal"}
-          as={"h1"}
-          size={"3xl"}
-          color={useColorModeValue("blue.700", "gray.100")}
-        >
-          Hi, I'm {me.name}
-        </Heading>
-        <Text fontSize={"2xl"}>{me.subtitle}</Text>
-        <Text fontSize={"xl"}>{me.tagline}</Text>
-        <Box mt={8} />
+        <Stack direction={"column"}>
+          <Heading
+            fontWeight={"normal"}
+            as={"h1"}
+            size={{
+              base: "3xl",
+              md: "4xl",
+            }}
+            color={useColorModeValue("blue.600", "gray.100")}
+          >
+            Hi, I'm{" "}
+            <Box as={"span"} color={useColorModeValue("blue.900", "blue.100")}>
+              {me.name}
+            </Box>
+          </Heading>
+          <Heading as={"h3"} fontSize={"2xl"}>
+            {me.subtitle}
+          </Heading>
+          <Text fontSize={"xl"} mt={4} maxW={"600px"}>
+            {me.tagline}
+          </Text>
+        </Stack>
         <Stack
           direction={"row"}
           spacing={0}
@@ -100,7 +117,7 @@ const Social = ({
   icon: IconType;
   url: string;
   hover: {
-    bg: string;
+    bg: [string, string];
     color: string;
   };
 }) => {
@@ -130,7 +147,7 @@ const Social = ({
         rounded={"full"}
         textDecoration={"none"}
         _hover={{
-          bg: hover.bg,
+          bg: useColorModeValue(hover.bg[0], hover.bg[1]),
           color: hover.color,
         }}
       >

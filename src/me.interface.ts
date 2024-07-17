@@ -53,7 +53,7 @@ interface ISocial {
   uri: string;
   hover: {
     color: string;
-    bg: string;
+    bg: [string, string];
   };
 }
 
