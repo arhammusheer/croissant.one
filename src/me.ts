@@ -24,7 +24,7 @@ export const me = {
   tagline:
     "I am a computer engineering student who loves to build software to create fun experiences.",
   about:
-    "Junior Computer Engineering student building production ready systems for my startup. I love making fun projects on the side usually for the memes. Checkout some of my recent projects below.",
+    "Senior Computer Engineering student building production ready systems for my startup. I love making fun projects and build stuff I like to use myself. Checkout some of my recent projects below. Oh and here is a croissant for you 🥐!",
   location: "Amherst, MA",
   image: "/assets/arhammusheer.jpeg",
   education: [
