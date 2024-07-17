@@ -28,7 +28,7 @@ export const me = {
     blue: "for the web",
   },
   about:
-    "Senior Computer Engineering student building production ready systems for my startup. I love making fun projects and build stuff I like to use myself. Oh and here is a croissant for you 🥐!",
+    "Senior Computer Engineering student who strives for high quality hardware and software experiences. I love making fun projects and build stuff I like to use myself. Oh and here is a croissant for you 🥐!",
   location: "Amherst, MA",
   image: "/assets/arhammusheer.jpeg",
   education: [

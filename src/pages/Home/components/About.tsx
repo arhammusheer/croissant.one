@@ -86,12 +86,12 @@ export const About = () => {
             </Heading>
           </GridItem>
           <GridItem>
-            <Flex w={"full"} h={"full"}>
+            <Flex w={"full"} h={"full"} maxW={"600px"}>
               <Box>
                 <Heading as={"h2"} fontSize={"4xl"}>
                   About
                 </Heading>
-                <Text fontSize={"xl"} mt={4}>
+                <Text fontSize={"xl"} mt={4} align={"justify"}>
                   {me.about}
                 </Text>
               </Box>
