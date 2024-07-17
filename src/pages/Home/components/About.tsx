@@ -76,12 +76,12 @@ export const About = () => {
               }}
               color={useColorModeValue("gray.800", "gray.100")}
             >
-              I make things{" "}
+              {me.bigHeading.black} {" "}
               <Text
                 as={"span"}
                 color={useColorModeValue("blue.600", "blue.300")}
               >
-                for the web
+                {me.bigHeading.blue}
               </Text>
             </Heading>
           </GridItem>

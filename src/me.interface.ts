@@ -4,6 +4,7 @@ export interface IMe {
   name: string;
   subtitle: string;
   tagline: string;
+  bigHeading: { black: string; blue: string };
   about: string;
   location: string;
   image: string;
