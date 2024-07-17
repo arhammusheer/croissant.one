@@ -56,12 +56,16 @@ export const Hero = () => {
         <Image
           rounded={"full"}
           boxSize={{
-            base: "200px",
+            base: "180px",
             md: "150px",
           }}
           src={me.image}
           border={"2px"}
           alt-text={"Profile picture"}
+          alignSelf={{
+            base: "center",
+            md: "flex-start",
+          }}
         />
         <Stack direction={"column"}>
           <Heading

@@ -88,10 +88,10 @@ export const About = () => {
           <GridItem>
             <Flex w={"full"} h={"full"}>
               <Box>
-                <Heading as={"h2"} fontSize={"3xl"}>
+                <Heading as={"h2"} fontSize={"4xl"}>
                   About
                 </Heading>
-                <Text fontSize={"lg"} mt={4}>
+                <Text fontSize={"xl"} mt={4}>
                   {me.about}
                 </Text>
               </Box>

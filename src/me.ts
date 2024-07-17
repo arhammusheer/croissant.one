@@ -22,13 +22,13 @@ export const me = {
   name: "Mohammad Arham",
   subtitle: "Computer Engineering Student & Backend Developer",
   tagline:
-    "I am a computer engineering student who loves to build software to create fun experiences.",
+    "I am a computer engineering student who loves to build fun high quality experiences and continuously learn new things.",
   bigHeading: {
     black: "I make things",
     blue: "for the web",
   },
   about:
-    "Senior Computer Engineering student building production ready systems for my startup. I love making fun projects and build stuff I like to use myself. Checkout some of my recent projects below. Oh and here is a croissant for you 🥐!",
+    "Senior Computer Engineering student building production ready systems for my startup. I love making fun projects and build stuff I like to use myself. Oh and here is a croissant for you 🥐!",
   location: "Amherst, MA",
   image: "/assets/arhammusheer.jpeg",
   education: [
