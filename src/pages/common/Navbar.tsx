@@ -4,6 +4,7 @@ import {
   Container,
   Flex,
   IconButton,
+  Image,
   Stack,
   StackDivider,
   Text,
@@ -26,12 +27,21 @@ export const Navbar = () => {
       <Stack minH={"10vh"} w={"full"} align={"center"} justify={"center"}>
         <Container maxW={"container.xl"}>
           <Flex justify={"space-between"}>
-            <Avatar
+            {/* <Avatar
               size={"md"}
               src={me.image}
               border={"1px"}
               borderColor={useColorModeValue("blue.400", "gray.700")}
               alt-text={`${me.name} profile picture`}
+            /> */}
+            <Image
+              src={"/assets/croissant.svg"}
+              alt={`${me.name} profile picture`}
+              boxSize={"50px"}
+              // Animation
+              as={motion.img}
+              whileHover={{ rotate: -120, scale: 1.1 }}
+              whileTap={{ rotate: 120, scale: 1.05 }}
             />
             {isMobile ? (
               <Box>
@@ -101,7 +111,7 @@ const BottomSheet = ({
         height: isOpen ? 500 : 0,
         opacity: isOpen ? 1 : 0,
       }}
-      transition={{ }}
+      transition={{}}
     >
       <Stack p={8} divider={<StackDivider />} spacing={4} zIndex={-1}>
         {options.map((option) => (
