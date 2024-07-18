@@ -50,6 +50,8 @@ export const Navbar = () => {
                   icon={<FaHamburger />}
                   variant={"ghost"}
                   onClick={isOpen ? onClose : onOpen}
+                  rounded={"full"}
+                  colorScheme="blue"
                 />
               </Box>
             ) : (
