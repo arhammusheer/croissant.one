@@ -1,4 +1,12 @@
-import { Box, Flex, Heading, Icon, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Icon,
+  Stack,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { useAnimation, motion } from "framer-motion";
 import { useEffect } from "react";
 import { IconType } from "react-icons";
@@ -14,13 +22,10 @@ export const Experience = () => {
       align={"center"}
       justify={"center"}
       direction={"column"}
-      p={{
-        base: 8,
-        md: 16,
-      }}
+      p={8}
     >
       <Box w={"full"}>
-        <Heading as={"h2"} fontSize={"3xl"}>
+        <Heading as={"h2"} fontSize={"3xl"} px={{ base: 0, md: 8 }}>
           Experience
         </Heading>
         <Stack direction={"column"} spacing={4} rowGap={4} mt={8} wrap={"wrap"}>
@@ -82,29 +87,33 @@ const SingleExperience = ({
       <Stack
         direction={"column"}
         justify={"center"}
-        mx={3}
-        px={2}
-        py={1}
+        pb={8}
+        px={{ base: 0, md: 8 }}
         borderRadius={"xl"}
+        spacing={4}
       >
-        <Heading as={"h3"} fontSize={"2xl"}>
-          {company}
-        </Heading>
-        <Heading as={"h4"} fontSize={"xl"} fontWeight={"normal"}>
-          {position}
-        </Heading>
-        <Heading as={"h5"} fontSize={"md"} fontWeight={"normal"}>
-          {duration}
-        </Heading>
-        <Heading as={"h5"} fontSize={"md"} fontWeight={"normal"}>
+        <Stack spacing={0}>
+          <Text fontSize={{ base: "md", md: "xl" }} color={useColorModeValue("gray.600", "gray.400")} mb={2}>
+            {duration}
+          </Text>
+          <Heading as={"h3"} fontSize={{ base: "3xl", md: "4xl" }}>
+            {company}
+          </Heading>
+          <Text as={"h4"} fontSize={{ base: "2xl", md: "3xl" }}>
+            {position}
+          </Text>
+        </Stack>
+        <Heading as={"span"} fontSize={"xl"} fontWeight={"normal"} mr={2}>
           {location}
         </Heading>
-        <Stack direction={"column"} />
+
+        <Stack direction={"column"} spacing={2}>
         {bullets.map((bullet) => (
-          <Heading as={"h5"} fontSize={"md"} fontWeight={"normal"} key={bullet}>
+          <Heading as={"h5"} fontSize={"lg"} fontWeight={"normal"} key={bullet}>
             - {bullet}
           </Heading>
         ))}
+        </Stack>
       </Stack>
     </motion.div>
   );
