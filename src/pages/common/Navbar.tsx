@@ -22,6 +22,10 @@ export const Navbar = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const preventRightClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+  }
+
   return (
     <>
       <Stack minH={"10vh"} w={"full"} align={"center"} justify={"center"}>
@@ -41,6 +45,7 @@ export const Navbar = () => {
               as={motion.img}
               whileHover={{ rotate: -120, scale: 1.1 }}
               whileTap={{ rotate: 120, scale: 1.05 }}
+              onContextMenu={preventRightClick}
             />
             {isMobile ? (
               <Box>
