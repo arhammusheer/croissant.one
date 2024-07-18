@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Stack } from "@chakra-ui/react";
+import { Box, Flex, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react";
 import { me } from "../../../me";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
@@ -69,18 +69,24 @@ const SingleEducation = ({
       variants={variants}
     >
       <Stack direction={"column"}>
-        <Heading as={"h3"} fontSize={"2xl"}>
+        <Text
+          as={"h5"}
+          fontSize={"xl"}
+          color={useColorModeValue("gray.600", "gray.400")}
+          mb={2}
+        >
+          {graduation}
+        </Text>
+        <Heading as={"h3"} fontSize={{ base: "3xl", md: "4xl" }}>
           {school}
         </Heading>
-        <Heading as={"h4"} fontSize={"xl"} fontWeight={"normal"}>
+        <Text as={"h4"} fontSize={{ base: "2xl", md: "3xl" }}>
           {degree} in {major}
-        </Heading>
-        <Heading as={"h5"} fontSize={"md"} fontWeight={"normal"}>
-          {graduation}
-        </Heading>
+        </Text>
+
         <Box h={"10px"} />
         {awards.map((award) => (
-          <Heading as={"h5"} fontSize={"md"} fontWeight={"normal"} key={award}>
+          <Heading as={"h5"} fontSize={"xl"} fontWeight={"normal"} key={award}>
             {award}
           </Heading>
         ))}
