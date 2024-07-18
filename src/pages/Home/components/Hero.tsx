@@ -13,6 +13,7 @@ import {
 import { isValidMotionProp, motion } from "framer-motion";
 import { IconType } from "react-icons";
 import { me } from "../../../me";
+import ReactGA from "react-ga4";
 
 export const Hero = () => {
   const variants = {
@@ -131,6 +132,10 @@ const Social = ({
       isValidMotionProp(prop) || shouldForwardProp(prop),
   });
 
+  const onClick = () => {
+    trackSocial(name);
+  }
+
   return (
     <ChakraBox
       whileHover={{
@@ -155,6 +160,7 @@ const Social = ({
           bg: useColorModeValue(hover.bg[0], hover.bg[1]),
           color: hover.color,
         }}
+        onClick={onClick}
       >
         <Icon as={icon} />
         <Text fontWeight={"bold"} fontSize={"lg"}>
@@ -164,5 +170,15 @@ const Social = ({
     </ChakraBox>
   );
 };
+
+// Analytics (ReactGA4)
+const trackSocial = (name: string) => {
+  ReactGA.event({
+    category: "Social",
+    action: "Clicked",
+    label: name,
+    
+  });
+}
 
 export default Hero;

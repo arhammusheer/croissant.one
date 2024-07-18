@@ -17,6 +17,7 @@ import { Link } from "react-scroll";
 import { me } from "../../me";
 import { motion } from "framer-motion";
 import { ThemeSwitcher } from "./ThemeSwitcher";
+import ReactGA from "react-ga4";
 
 export const Navbar = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -93,6 +94,7 @@ const DesktopOptions = () => {
             bg: useColorModeValue("blue.100", "gray.600"),
           }}
           transition={"all 0.2s ease-in-out"}
+          onClick={() => trackClick(option.name, "Desktop")}
         >
           <Text
             fontWeight={"bold"}
@@ -114,6 +116,11 @@ const BottomSheet = ({
   isOpen: boolean;
   onClose: () => void;
 }) => {
+  const onClick = (name: string) => {
+    onClose();
+    trackClick(name, "Mobile");
+  }
+  
   return (
     <motion.div
       initial={{ height: 0, opacity: 0, zIndex: -1 }}
@@ -134,7 +141,7 @@ const BottomSheet = ({
             offset={-500}
             smooth={true}
             cursor={isOpen ? "pointer" : "default"}
-            onClick={onClose}
+            onClick={() => onClick(option.name)}
           >
             {option.name}
           </Box>
@@ -174,5 +181,14 @@ const options = [
     href: "contact",
   },
 ];
+
+// Analytics
+const trackClick = (name: string, variant: "Mobile" | "Desktop" = "Desktop") => {
+  ReactGA.event({
+    category: "Navigation",
+    action: "Click",
+    label: `${name} - ${variant}`,
+  });
+};
 
 export default Navbar;
