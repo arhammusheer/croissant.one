@@ -67,7 +67,7 @@ const DesktopOptions = () => {
   return (
     <Stack
       direction={"row"}
-      spacing={4}
+      spacing={0}
       align={"center"}
       justify={"center"}
       height={"full"}
@@ -80,7 +80,7 @@ const DesktopOptions = () => {
           to={option.href}
           smooth={true}
           cursor={"pointer"}
-          px={2}
+          px={3}
           height={"full"}
           _hover={{
             bg: useColorModeValue("blue.100", "gray.600"),
