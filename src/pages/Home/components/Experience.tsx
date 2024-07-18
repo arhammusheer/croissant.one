@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import { IconType } from "react-icons";
 import { useInView } from "react-intersection-observer";
 import { me } from "../../../me";
+import ReactGA from "react-ga4";
 
 export const Experience = () => {
   return (
@@ -75,6 +76,7 @@ const SingleExperience = ({
     } else {
       controls.start("hidden");
     }
+    trackInView(inView, position);
   }, [controls, inView]);
 
   return (
@@ -118,5 +120,16 @@ const SingleExperience = ({
     </motion.div>
   );
 };
+
+// Analytics
+const trackInView = (inView: boolean, label: string) => {
+  if (inView) {
+    ReactGA.event({
+      category: "Experience",
+      action: "InView",
+      label: label,
+    });
+  }
+}
 
 export default Experience;
