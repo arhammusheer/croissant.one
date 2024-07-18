@@ -26,19 +26,18 @@ export const Navbar = () => {
     <>
       <Stack minH={"10vh"} w={"full"} align={"center"} justify={"center"}>
         <Container maxW={"container.xl"}>
-          <Flex justify={"space-between"}>
-            {/* <Avatar
-              size={"md"}
-              src={me.image}
-              border={"1px"}
-              borderColor={useColorModeValue("blue.400", "gray.700")}
-              alt-text={`${me.name} profile picture`}
-            /> */}
+          <Flex
+            justify={"space-between"}
+            bg={useColorModeValue("blue.50", "gray.800")}
+            height={"64px"}
+            px={3}
+            rounded={"full"}
+            align={"center"}
+          >
             <Image
               src={"/assets/croissant.svg"}
               alt={`${me.name} profile picture`}
-              boxSize={"50px"}
-              // Animation
+              boxSize={10}
               as={motion.img}
               whileHover={{ rotate: -120, scale: 1.1 }}
               whileTap={{ rotate: 120, scale: 1.05 }}
@@ -66,7 +65,13 @@ export const Navbar = () => {
 
 const DesktopOptions = () => {
   return (
-    <Stack direction={"row"} spacing={4} align={"center"}>
+    <Stack
+      direction={"row"}
+      spacing={4}
+      align={"center"}
+      justify={"center"}
+      height={"full"}
+    >
       {options.map((option) => (
         <Flex
           align={"center"}
@@ -75,10 +80,8 @@ const DesktopOptions = () => {
           to={option.href}
           smooth={true}
           cursor={"pointer"}
-          bg={useColorModeValue("blue.50", "gray.700")}
-          px={4}
-          py={1}
-          rounded={"md"}
+          px={2}
+          height={"full"}
           _hover={{
             bg: useColorModeValue("blue.100", "gray.600"),
           }}
