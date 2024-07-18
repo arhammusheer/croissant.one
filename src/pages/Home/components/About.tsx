@@ -91,7 +91,7 @@ export const About = () => {
                 <Heading as={"h2"} fontSize={"4xl"}>
                   About
                 </Heading>
-                <Text fontSize={"xl"} mt={4} align={"justify"}>
+                <Text fontSize={"xl"} mt={4} align={{ base: "left", md: "justify" }}>
                   {me.about}
                 </Text>
               </Box>
