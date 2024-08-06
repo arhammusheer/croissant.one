@@ -76,17 +76,6 @@ export const me = {
       ],
     },
     {
-      company: "University of Massachusetts Amherst",
-      location: "Amherst, MA",
-      position: "IT Technical Consultant",
-      duration: "Summer 2022",
-      bullets: [
-        "Dismantled and deployed several hundred computers using scripted deployments and OS installs on Windows and Mac machines all around the UMass Campus.",
-        "Performed maintenance and upkeep of about 12-15 computer labs around campus.",
-        "Added new machines to the network and tested several hundred machines for issues and raised service requests.",
-      ],
-    },
-    {
       company: "Cisco Systems",
       location: "Bangalore, India",
       position: "Front End Developer Intern - Talent Outreach Program",
