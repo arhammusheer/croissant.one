@@ -134,6 +134,25 @@ export const me = {
       backgroundImage: "/assets/bus-tracker.jpg",
     },
     {
+      name: "Croissant Paste It",
+      description:
+        "Ever wanted a place to dump some text and share it with someone or yourself on another device? Me too! So I built an app for your pasting needs.",
+      contribution:
+        "I designed and wrote the app in Typescript with backend in Node.js and Express and the frontend in React.js. I also deployed the app on railway.app.",
+      technologies: ["Node.js", "Express", "React", "TypeScript", "Railway"],
+      links: [
+        {
+          name: "Website",
+          uri: "https://paste.croissant.one",
+        },
+        {
+          name: "Github",
+          uri: "https://github.com/arhammusheer/paste.croissant.one",
+        },
+      ],
+      image: "/assets/croissant.svg",
+    },
+    {
       name: "Lord of the Lunchroom",
       description:
         "A project for HackUMass which let 2 people in a cowboy duel smart hats to see who wins the table in the wochester dining hall. The project won the funnest hack award.",
