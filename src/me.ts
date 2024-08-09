@@ -150,7 +150,7 @@ export const me = {
           uri: "https://github.com/arhammusheer/paste.croissant.one",
         },
       ],
-      image: "/assets/croissant.svg",
+      image: "/assets/croissant-paste-it.png",
     },
     {
       name: "Lord of the Lunchroom",
