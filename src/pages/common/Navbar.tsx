@@ -38,6 +38,8 @@ export const Navbar = () => {
             px={3}
             rounded={"full"}
             align={"center"}
+            border={"1px"}
+            borderColor={useColorModeValue("brand.300", "gray.700")}
           >
             <Image
               src={"/assets/croissant.svg"}
