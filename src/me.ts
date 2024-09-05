@@ -1,18 +1,25 @@
+import { DiScrum } from "react-icons/di";
 import {
   FaDocker,
+  FaGit,
   FaGithub,
   FaLinkedin,
   FaNewspaper,
   FaNode,
-  FaPager,
   FaReact,
 } from "react-icons/fa";
+import { HiChip } from "react-icons/hi";
 import {
+  SiAmazonaws,
   SiC,
+  SiGo,
   SiGooglecloud,
   SiJavascript,
   SiKubernetes,
+  SiMongodb,
+  SiPostgresql,
   SiPython,
+  SiShell,
   SiTypescript,
 } from "react-icons/si";
 
@@ -243,6 +250,18 @@ export const me = {
       icon: SiPython,
     },
     {
+      name: "Golang",
+      icon: SiGo,
+    },
+    {
+      name: "Bash/Shell",
+      icon: SiShell,
+    },
+    {
+      name: "Embedded Systems",
+      icon: HiChip,
+    },
+    {
       name: "Clang",
       icon: SiC,
     },
@@ -266,6 +285,26 @@ export const me = {
     {
       name: "Kubernetes",
       icon: SiKubernetes,
+    },
+    {
+      name: "MongoDB",
+      icon: SiMongodb,
+    },
+    {
+      name: "PostgreSQL",
+      icon: SiPostgresql,
+    },
+    {
+      name: "AWS",
+      icon: SiAmazonaws,
+    },
+    {
+      name: "Git",
+      icon: FaGit,
+    },
+    {
+      name: "Agile/Scrum",
+      icon: DiScrum,
     },
   ],
   social: [
