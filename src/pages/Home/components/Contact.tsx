@@ -45,7 +45,7 @@ export const Contact = () => {
             md: "4xl",
           }}
           mt={8}
-          color={useColorModeValue("blue.500", "blue.300")}
+          color={useColorModeValue("brand.500", "brand.300")}
           as={Link}
           href={`mailto:${me.contact.email}`}
           target="_blank"

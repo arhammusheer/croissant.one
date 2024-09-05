@@ -16,9 +16,9 @@ export const ThemeSwitcher = () => {
       icon={colorMode === "light" ? <FaMoon /> : <FaSun />}
       variant={"ghost"}
       onClick={onClick}
-      color={useColorModeValue("blue.500", "blue.200")}
+      color={useColorModeValue("brand.500", "brand.200")}
       _hover={{
-        bg: useColorModeValue("blue.100", "blue.900"),
+        bg: useColorModeValue("brand.100", "brand.900"),
       }}
       rounded={"full"}
     />

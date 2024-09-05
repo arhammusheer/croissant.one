@@ -116,7 +116,7 @@ const SingleSkill = ({
       <Stack
         direction={"row"}
         align={"center"}
-        bg={useColorModeValue("blue.100", "gray.900")}
+        bg={useColorModeValue("brand.100", "gray.900")}
         px={2}
         py={1}
         borderRadius={"xl"}

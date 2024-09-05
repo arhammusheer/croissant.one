@@ -33,7 +33,7 @@ export const Navbar = () => {
         <Container maxW={"container.xl"}>
           <Flex
             justify={"space-between"}
-            bg={useColorModeValue("blue.50", "gray.800")}
+            bg={useColorModeValue("brand.50", "gray.800")}
             height={"64px"}
             px={3}
             rounded={"full"}
@@ -57,7 +57,7 @@ export const Navbar = () => {
                   variant={"ghost"}
                   onClick={isOpen ? onClose : onOpen}
                   rounded={"full"}
-                  colorScheme="blue"
+                  colorScheme="brand"
                 />
               </Box>
             ) : (
@@ -91,14 +91,14 @@ const DesktopOptions = () => {
           px={3}
           height={"full"}
           _hover={{
-            bg: useColorModeValue("blue.100", "gray.600"),
+            bg: useColorModeValue("brand.100", "gray.600"),
           }}
           transition={"all 0.2s ease-in-out"}
           onClick={() => trackClick(option.name, "Desktop")}
         >
           <Text
             fontWeight={"bold"}
-            color={useColorModeValue("blue.700", "gray.100")}
+            color={useColorModeValue("brand.700", "gray.100")}
           >
             {option.name}
           </Text>

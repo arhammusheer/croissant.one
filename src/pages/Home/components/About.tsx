@@ -45,8 +45,8 @@ export const About = () => {
         minH={"60vh"}
         w={"full"}
         bgGradient={useColorModeValue(
-          "linear(to-b, white, blue.200, white)",
-          "linear(to-b, black, blue.800, black)"
+          "linear(to-b, white, brand.200, white)",
+          "linear(to-b, black, brand.800, black)"
         )}
         align={"center"}
         justify={"center"}
@@ -79,7 +79,7 @@ export const About = () => {
               {me.bigHeading.black} {" "}
               <Text
                 as={"span"}
-                color={useColorModeValue("blue.600", "blue.300")}
+                color={useColorModeValue("brand.600", "brand.300")}
               >
                 {me.bigHeading.blue}
               </Text>

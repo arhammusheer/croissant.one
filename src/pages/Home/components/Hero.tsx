@@ -44,7 +44,7 @@ export const Hero = () => {
       <Stack
         h={"full"}
         w={"full"}
-        bg={useColorModeValue("blue.100", "gray.900")}
+        bg={useColorModeValue("brand.100", "gray.900")}
         rounded={"3xl"}
         border={"1px"}
         borderColor={useColorModeValue("gray.200", "gray.700")}
@@ -77,10 +77,10 @@ export const Hero = () => {
               base: "3xl",
               md: "4xl",
             }}
-            color={useColorModeValue("blue.600", "gray.100")}
+            color={useColorModeValue("brand.600", "gray.100")}
           >
             Hi, I'm{" "}
-            <Box as={"span"} color={useColorModeValue("blue.900", "blue.100")}>
+            <Box as={"span"} color={useColorModeValue("brand.900", "brand.100")}>
               {me.name}
             </Box>
           </Heading>

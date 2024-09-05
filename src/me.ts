@@ -23,7 +23,11 @@ import {
   SiTypescript,
 } from "react-icons/si";
 
-import { IMe } from "./me.interface";
+import { IMe, ITheme } from "./me.interface";
+import { baseTheme } from "@chakra-ui/react";
+
+// Warning: Don't use "black" or "white" values
+export const themeColor: ITheme = "orange";
 
 export const me = {
   name: "Mohammad Arham",

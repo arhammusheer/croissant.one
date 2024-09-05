@@ -1,4 +1,7 @@
+import { baseTheme } from "@chakra-ui/react";
 import { IconType } from "react-icons";
+
+export type ITheme = keyof typeof baseTheme.colors;
 
 export interface IMe {
   name: string;
