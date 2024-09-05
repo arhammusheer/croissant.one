@@ -47,7 +47,7 @@ export const Hero = () => {
         bg={useColorModeValue("brand.100", "gray.900")}
         rounded={"3xl"}
         border={"1px"}
-        borderColor={useColorModeValue("gray.200", "gray.700")}
+        borderColor={useColorModeValue("brand.200", "gray.700")}
         p={{
           base: 4,
           md: 12,
