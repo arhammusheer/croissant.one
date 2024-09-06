@@ -86,7 +86,6 @@ const DesktopOptions = () => {
     >
       {options.map((option) => (
         <motion.div
-          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           key={option.name}
           style={{ height: "100%" }}
@@ -105,7 +104,6 @@ const DesktopOptions = () => {
             onKeyDown={(e) => handleKeyDown(e, option.href, option.name)}
             _hover={{
               backgroundColor: useColorModeValue("brand.50", "brand.700"),
-              borderRadius: "xl",
               border: "1px",
               borderColor: borderColor,
             }}
