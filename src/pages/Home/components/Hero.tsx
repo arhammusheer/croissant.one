@@ -33,7 +33,7 @@ export const Hero = () => {
       zIndex={1}
       p={{
         base: 4,
-        md: 12,
+        md: 8,
       }}
       as={motion.div}
       initial="hidden"

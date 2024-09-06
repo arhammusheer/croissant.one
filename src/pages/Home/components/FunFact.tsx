@@ -5,14 +5,13 @@ import { me } from "../../../me";
 
 const FunFact: React.FC = () => {
   const [currentFact, setCurrentFact] = useState(0);
-  const [randomFacts] = useState(
-    me.facts?.length ? me.facts.sort(() => 0.5 - Math.random()) : []
-  );
+	const [randomFacts] = useState(me.facts || []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentFact((prevFact) => (prevFact + 1) % randomFacts.length);
-    }, 5000); // Adjusted to 4 seconds to better view the animation
+      const randomIndex = Math.floor(Math.random() * randomFacts.length);
+      setCurrentFact(randomIndex);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -25,13 +24,13 @@ const FunFact: React.FC = () => {
     <Stack
       direction={"row"}
       wrap={"wrap"}
-      spacing={4}
+      spacing={0}
       w={"full"}
       align={"center"}
       justify={"center"}
     >
       <Text
-        fontSize={"xl"}
+        fontSize={"lg"}
         color={useColorModeValue("brand.600", "brand.300")}
         fontWeight={"bold"}
         bg={useColorModeValue("brand.100", "brand.900")}
@@ -50,7 +49,11 @@ const FunFact: React.FC = () => {
           exit={{ opacity: 0, y: "-50%" }} // Exit animation
           transition={{ duration: 0.5 }} // Animation duration
         >
-          <Text fontSize={"xl"} maxW={"600px"}>
+          <Text
+            fontSize={"lg"}
+            color={useColorModeValue("brand.800", "brand.100")}
+						px={4}
+          >
             {randomFacts[currentFact]}
           </Text>
         </motion.div>
