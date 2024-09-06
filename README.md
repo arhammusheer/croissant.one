@@ -1,5 +1,8 @@
 # Croissant Portfolio
 
+[!TIP]
+Website now has multi theme support. Scroll down to [Theme](#color-theme) section to check it out!
+
 Hey there, This is my personal portfolio website I designed from scratch
 
 It supports the following sections:
@@ -40,6 +43,26 @@ Also, If you have a major feature which you have implemented, please open a PR a
 
 If you liked this project, please give it a ⭐️ on Github.
 
+
+## Color Theme
+The template now supports color themes!
+
+You can set your default theme in `src/me.ts` in `themeColor` variable.
+
+You can also select allowed themes which the user can switch to.
+To modify the list go to `src/pages/common/ThemeSwitcher.tsx` and modify the `themeOptions` list.
+
+#### Supported Themes
+- gray
+- red
+- orange
+- green
+- teal
+- blue
+- cyan
+- purple
+- pink
+- blackAlpha (Not Recommended)
 
 
 ## License
