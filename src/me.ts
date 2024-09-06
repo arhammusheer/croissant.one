@@ -45,6 +45,7 @@ export const me = {
   name: "Mohammad Arham",
   // Facts are optional
   facts: [
+    "You can use this website as your portfolio too. If you need help just ask!",
     "This website is fully navigable with a keyboard.",
     "I also build PCBs and make hardware projects.",
     "You can change your color scheme by clicking the top right icon.",
