@@ -186,6 +186,7 @@ const ThemeOption = ({
           onKeyDown={handleKeyDown}
           onClick={onClick}
           rounded={"full"}
+          autoFocus
         />
       </motion.div>
     );
