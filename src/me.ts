@@ -43,6 +43,18 @@ export const enableMultiTheme: boolean = true;
 
 export const me = {
   name: "Mohammad Arham",
+  // Facts are optional
+  facts: [
+    "This website is fully navigable with a keyboard.",
+    "I also build PCBs and make hardware projects.",
+    "You can change your color scheme by clicking the top right icon.",
+    "Kubernetes and croissants are my two favorite things—both require finesse.",
+    "I built my own bus tracker display so i'm never late in the morning.",
+    "I track temperature and humidity in my room and have 3 months of data. Ask me what I found!",
+    "Try clicking on random things, you might find some fun animations.",
+    "I spent about 6 hours on the theme button alone.",
+    "Try opening the console and see if you can find any easter eggs.",
+  ],
   subtitle: "Computer Engineering Student & Backend Developer",
   tagline:
     "I am a computer engineering student who loves to build fun high quality experiences and continuously learn new things.",

@@ -5,6 +5,7 @@ export type ITheme = keyof typeof baseTheme.colors;
 
 export interface IMe {
   name: string;
+  facts?: string[];
   subtitle: string;
   tagline: string;
   bigHeading: { black: string; blue: string };
