@@ -31,7 +31,8 @@ export const Hero = () => {
       alignItems={"center"}
       bg={useColorModeValue("brand.50", "brand.950")}
       zIndex={1}
-      p={{
+      px={4}
+      py={{
         base: 4,
         md: 8,
       }}
@@ -151,7 +152,6 @@ const Social = ({
       }}
       tabIndex={-1}
     >
-      {" "}
       <Stack
         direction={"row"}
         as={"a"}

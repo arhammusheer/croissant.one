@@ -29,44 +29,50 @@ export const Navbar = () => {
 
   return (
     <>
-      <Stack minH={"10vh"} w={"full"} align={"center"} justify={"center"}>
-        <Container maxW={"container.xl"}>
-          <Flex
-            justify={"space-between"}
-            bg={useColorModeValue("brand.100", "brand.900")}
-            height={"64px"}
-            px={3}
-            rounded={"full"}
-            align={"center"}
-            border={"1px"}
-            borderColor={borderColor}
-          >
-            <Image
-              src={"/assets/croissant.svg"}
-              alt={`${me.name} profile picture`}
-              boxSize={10}
-              as={motion.img}
-              whileHover={{ rotate: -120, scale: 1.1 }}
-              whileTap={{ rotate: 120, scale: 1.05 }}
-              onContextMenu={preventRightClick}
-            />
-            {isMobile ? (
-              <Flex align={"center"}>
-                <ThemeSwitcher />
-                <IconButton
-                  aria-label="Open menu"
-                  icon={<FaHamburger />}
-                  variant={"ghost"}
-                  onClick={isOpen ? onClose : onOpen}
-                  rounded={"full"}
-                  colorScheme="brand"
-                />
-              </Flex>
-            ) : (
-              <DesktopOptions />
-            )}
-          </Flex>
-        </Container>
+      <Stack
+        minH={"10vh"}
+        w={"full"}
+        align={"center"}
+        justify={"center"}
+        maxW={"container.xl"}
+        px={4}
+      >
+        <Flex
+          justify={"space-between"}
+          bg={useColorModeValue("brand.100", "brand.900")}
+          height={"64px"}
+          px={3}
+          w={"full"}
+          rounded={"full"}
+          align={"center"}
+          border={"1px"}
+          borderColor={borderColor}
+        >
+          <Image
+            src={"/assets/croissant.svg"}
+            alt={`${me.name} profile picture`}
+            boxSize={10}
+            as={motion.img}
+            whileHover={{ rotate: -120, scale: 1.1 }}
+            whileTap={{ rotate: 120, scale: 1.05 }}
+            onContextMenu={preventRightClick}
+          />
+          {isMobile ? (
+            <Flex align={"center"}>
+              <ThemeSwitcher />
+              <IconButton
+                aria-label="Open menu"
+                icon={<FaHamburger />}
+                variant={"ghost"}
+                onClick={isOpen ? onClose : onOpen}
+                rounded={"full"}
+                colorScheme="brand"
+              />
+            </Flex>
+          ) : (
+            <DesktopOptions />
+          )}
+        </Flex>
       </Stack>
       <BottomSheet isOpen={isOpen} onClose={onClose} />
     </>
@@ -195,7 +201,7 @@ const options = [
 // Analytics
 const trackClick = (
   name: string,
-  variant: "Mobile" | "Desktop" | "Keyboard" = "Desktop",
+  variant: "Mobile" | "Desktop" | "Keyboard" = "Desktop"
 ) => {
   ReactGA.event({
     category: "Navigation",

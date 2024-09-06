@@ -16,9 +16,10 @@ import { me } from "../../../me";
 export const Skills = () => {
   return (
     <Flex
+      maxW={"100vw"}
+      flexBasis={"auto"}
       id="skills"
       minH={"50vh"}
-      w={"full"}
       align={"center"}
       justify={"center"}
       direction={"column"}
@@ -28,7 +29,7 @@ export const Skills = () => {
       }}
       tabIndex={-1}
     >
-      <Stack w={"full"} spacing={4}>
+      <Stack spacing={4}>
         <Heading as={"h2"} fontSize={"3xl"}>
           Skills/Technologies
         </Heading>
@@ -54,7 +55,6 @@ export const Skills = () => {
 const TryDraggingMe = () => {
   return (
     <Stack
-      w={"full"}
       p={2}
       justify={"flex-end"}
       direction={"row"}
