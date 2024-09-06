@@ -1,4 +1,4 @@
-import { Box, Flex, Stack, Text, useColorModeValue } from "@chakra-ui/react";
+import { Flex, Stack, Text, useColorModeValue } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { me } from "../../../me";

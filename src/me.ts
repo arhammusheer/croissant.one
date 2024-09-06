@@ -54,6 +54,8 @@ export const me = {
     "Try clicking on random things, you might find some fun animations.",
     "I spent about 6 hours on the theme button alone.",
     "Try opening the console and see if you can find any easter eggs.",
+    "I mentor students and help fix projects during HackUMass.",
+    
   ],
   subtitle: "Computer Engineering Student & Backend Developer",
   tagline:
