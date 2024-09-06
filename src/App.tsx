@@ -9,7 +9,7 @@ import { ITheme } from "./me.interface";
 
 // ColorScheme Context
 export const ColorSchemeContext = createContext<{
-  colorScheme: string;
+  colorScheme: ITheme;
   setColorScheme: (colorScheme: ITheme) => void;
 }>({
   colorScheme: themeColor,

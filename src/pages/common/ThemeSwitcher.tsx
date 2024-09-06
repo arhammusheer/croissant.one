@@ -21,6 +21,7 @@ import { ITheme } from "../../me.interface";
 import { enableMultiTheme, multiThemeOptions } from "../../me";
 
 export const ThemeSwitcher = () => {
+  const { setColorScheme, colorScheme } = useContext(ColorSchemeContext);
   const { colorMode, toggleColorMode } = useColorMode();
   const { onOpen, onClose, isOpen } = useDisclosure();
 
@@ -108,7 +109,12 @@ export const ThemeSwitcher = () => {
         <PopoverBody py={3}>
           <Stack direction={"column"} spacing={1} align={"center"}>
             {multiThemeOptions.map((theme) => (
-              <ThemeOption key={theme} color={theme} />
+              <ThemeOption
+                key={theme}
+                color={theme}
+                colorScheme={colorScheme}
+                setColorScheme={setColorScheme}
+              />
             ))}
           </Stack>
         </PopoverBody>
@@ -117,9 +123,18 @@ export const ThemeSwitcher = () => {
   );
 };
 
-const ThemeOption = ({ color }: { color: ITheme }) => {
-  const { setColorScheme, colorScheme } = useContext(ColorSchemeContext);
+const ThemeOption = ({
+  color,
+  colorScheme,
+  setColorScheme,
+}: {
+  color: ITheme;
+  colorScheme: ITheme;
+  setColorScheme: (color: ITheme) => void;
+}) => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const iconButtonColor = useColorModeValue("brand.500", "brand.200");
+  const iconButtonHoverBg = useColorModeValue("brand.100", "brand.900");
 
   const onClick = () => {
     if (color === colorScheme) {
@@ -137,9 +152,9 @@ const ThemeOption = ({ color }: { color: ITheme }) => {
           aria-label="Toggle theme"
           icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
           variant={"solid"}
-          color={useColorModeValue("brand.500", "brand.200")}
+          color={iconButtonColor}
           _hover={{
-            bg: useColorModeValue("brand.100", "brand.900"),
+            bg: iconButtonHoverBg,
           }}
           onClick={onClick}
           rounded={"full"}
