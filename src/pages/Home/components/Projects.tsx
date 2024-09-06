@@ -76,7 +76,7 @@ const SingleProject = ({
 }) => {
   const overlay = useColorModeValue(
     "linear(to-r, brand.50, whiteAlpha.700)",
-    "linear(to-r, brand.900, blackAlpha.700)",
+    "linear(to-r, brand.900, blackAlpha.700)"
   );
   const bg = useColorModeValue("white", "brand.900");
   return (
@@ -90,12 +90,6 @@ const SingleProject = ({
       borderColor={useColorModeValue("brand.200", "brand.700")}
       as={motion.div}
       justify={"center"}
-      whileHover={{
-        borderWidth: "2px",
-        transition: {
-          duration: 0.2,
-        },
-      }}
       whileTap={{
         scale: 0.99,
         transition: {
