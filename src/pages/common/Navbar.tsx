@@ -1,10 +1,15 @@
 import {
   Box,
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
   Flex,
+  Icon,
   IconButton,
   Image,
   Stack,
-  StackDivider,
   Text,
   useBreakpointValue,
   useColorModeValue,
@@ -12,7 +17,17 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
-import { FaHamburger } from "react-icons/fa";
+import {
+  FaBriefcase,
+  FaHamburger,
+  FaHardHat,
+  FaHome,
+  FaMailBulk,
+  FaSchool,
+  FaTimes,
+  FaToolbox,
+  FaUser,
+} from "react-icons/fa";
 import { Link } from "react-scroll";
 import { me } from "../../me";
 import { ThemeSwitcher } from "./ThemeSwitcher";
@@ -146,51 +161,76 @@ const BottomSheet = ({
   const borderColor = useColorModeValue("brand.200", "brand.600");
 
   return (
-    <Box
-      p={isOpen ? 4 : 0}
-      zIndex={-1}
-      w={"full"}
-      initial={{ height: 0, opacity: 0, zIndex: -1 }}
-      animate={{
-        height: isOpen ? 500 : 0,
-        opacity: isOpen ? 1 : 0,
-        zIndex: isOpen ? 1 : -1,
-      }}
-      as={motion.div}
+    <Drawer
+      isOpen={isOpen}
+      placement="top"
+      onClose={onClose}
+      // finalFocusRef={}
     >
-      <Stack
-        direction={"column"}
-        spacing={4}
-        divider={<StackDivider borderColor={borderColor} />}
-        align={"center"}
-        bg={useColorModeValue("brand.100", "brand.900")}
-        borderRadius={"xl"}
-        p={4}
-        border={"1px"}
-        borderColor={borderColor}
-        >
-      {options.map((option) => (
-        <Box
-          key={option.name}
-          role={"button"}
-          w={"full"}
-          as={Link}
-          to={isOpen ? option.href : ""}
-          offset={-500}
-          smooth={true}
-          cursor={isOpen ? "pointer" : "default"}
-          onClick={() => onClick(option.name)}
-          onKeyDown={(e: React.KeyboardEvent) =>
-            handleKeyDown(e, option.href, option.name)
-          }
-          tabIndex={isOpen ? 0 : -1} // Make focusable only when open
-        >
-          {option.name}
-        </Box>
-      ))}
-      </Stack>
-      
-    </Box>
+      <DrawerOverlay />
+      <DrawerContent bg={useColorModeValue("brand.50", "brand.950")} py={4}>
+        <DrawerHeader>
+          <Stack direction={"row"} justify={"space-between"} align={"center"}>
+            <Image
+              src={"/assets/croissant.svg"}
+              alt={`${me.name} profile picture`}
+              boxSize={10}
+              as={motion.img}
+              whileHover={{ rotate: -120, scale: 1.1 }}
+              whileTap={{ rotate: 120, scale: 1.05 }}
+            />
+            <IconButton
+              aria-label="Close menu"
+              icon={<FaTimes />}
+              variant={"ghost"}
+              onClick={onClose}
+              rounded={"full"}
+              colorScheme="brand"
+            />
+          </Stack>
+        </DrawerHeader>
+        <DrawerBody>
+          <Stack
+            direction={"column"}
+            spacing={0}
+            justify={"center"}
+            height={"full"}
+          >
+            {options.map((option) => (
+              <Stack
+                p={4}
+                key={option.name}
+                role={"button"}
+                as={Link}
+                to={isOpen ? option.href : ""}
+                smooth={true}
+                cursor={isOpen ? "pointer" : "default"}
+                onClick={() => onClick(option.name)}
+                onKeyDown={(e: React.KeyboardEvent) => {
+                  handleKeyDown(e, option.href, option.name);
+                  onClose();
+                }}
+                border={"1px"}
+                borderColor="transparent"
+                borderRadius={"lg"}
+                _hover={{
+                  backgroundColor: useColorModeValue("brand.50", "brand.700"),
+                  borderColor: borderColor,
+                }}
+                tabIndex={isOpen ? 0 : -1} // Make focusable only when open
+                direction={"row"}
+                spacing={4}
+                align={"center"}
+                color={useColorModeValue("brand.800", "brand.50")}
+              >
+                <Icon as={option.icon} boxSize={4} />
+                <Text fontWeight={"bold"}>{option.name}</Text>
+              </Stack>
+            ))}
+          </Stack>
+        </DrawerBody>
+      </DrawerContent>
+    </Drawer>
   );
 };
 
@@ -204,13 +244,13 @@ const handleKeyDown = (e: React.KeyboardEvent, href: string, name: string) => {
 };
 
 const options = [
-  { name: "Home", href: "home" },
-  { name: "About", href: "about" },
-  { name: "Education", href: "education" },
-  { name: "Experience", href: "experience" },
-  { name: "Projects", href: "projects" },
-  { name: "Skills", href: "skills" },
-  { name: "Contact", href: "contact" },
+  { name: "Home", href: "home", icon: FaHome },
+  { name: "About", href: "about", icon: FaUser },
+  { name: "Education", href: "education", icon: FaSchool },
+  { name: "Experience", href: "experience", icon: FaBriefcase },
+  { name: "Projects", href: "projects", icon: FaHardHat },
+  { name: "Skills", href: "skills", icon: FaToolbox },
+  { name: "Contact", href: "contact", icon: FaMailBulk },
 ];
 
 // Analytics
