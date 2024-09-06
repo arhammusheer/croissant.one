@@ -39,6 +39,8 @@ export const ThemeSwitcher = () => {
   if (!enableMultiTheme) {
     return (
       <IconButton
+        role="button"
+        tabIndex={0}
         aria-label="Toggle theme"
         icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
         variant={"ghost"}
@@ -67,9 +69,12 @@ export const ThemeSwitcher = () => {
         <motion.div
           whileHover={{ rotate: isOpen ? 0 : -22.5 }}
           whileTap={{ rotate: 90 }}
+          tabIndex={-1}
         >
           {isOpen ? (
             <IconButton
+              role="button"
+              tabIndex={0}
               aria-label="Close theme options"
               icon={<FaTimes />}
               variant={"ghost"}
@@ -85,6 +90,8 @@ export const ThemeSwitcher = () => {
             />
           ) : (
             <IconButton
+              role="button"
+              tabIndex={0}
               aria-label="Toggle theme"
               icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
               variant={"ghost"}
@@ -122,7 +129,6 @@ export const ThemeSwitcher = () => {
     </Popover>
   );
 };
-
 const ThemeOption = ({
   color,
   colorScheme,
@@ -145,17 +151,27 @@ const ThemeOption = ({
     trackClick(color);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement | HTMLButtonElement>) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      onClick();
+    }
+  };
+
   if (color === colorScheme) {
     return (
-      <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+      <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} tabIndex={-1}>
         <IconButton
+          role="button"
+          tabIndex={0}
           aria-label="Toggle theme"
-          icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
+          icon={colorMode === "light" ? <FaSun tabIndex={-1} /> : <FaMoon tabIndex={-1} />}
           variant={"solid"}
           color={iconButtonColor}
           _hover={{
             bg: iconButtonHoverBg,
           }}
+          onKeyDown={handleKeyDown}
           onClick={onClick}
           rounded={"full"}
         />
@@ -167,12 +183,16 @@ const ThemeOption = ({
     <motion.div
       whileHover={{ scale: 1.1, rotate: colorMode === "light" ? 45 : -45 }}
       whileTap={{ scale: 0.9, rotate: colorMode === "light" ? -45 : 45 }}
+      tabIndex={-1}
     >
-      <Tooltip label={color} aria-label={color} placement="left">
+      <Tooltip label={color} aria-label={color} placement="left" hasArrow>
         <Flex
+          role="button"
+          tabIndex={0}
           onClick={onClick}
           cursor={"pointer"}
           rounded={"full"}
+          onKeyDown={handleKeyDown}
           p={1}
           bg={color === colorScheme ? `${color}.200` : "transparent"}
           _hover={{
