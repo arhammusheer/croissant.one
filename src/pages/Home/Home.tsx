@@ -1,4 +1,4 @@
-import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
+import { Flex, useColorModeValue } from "@chakra-ui/react";
 import { lazy, Suspense } from "react";
 import { Loader } from "../loading/Loader";
 import FunFact from "./components/FunFact";

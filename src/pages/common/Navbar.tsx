@@ -1,6 +1,5 @@
 import {
   Box,
-  Container,
   Flex,
   IconButton,
   Image,
@@ -9,7 +8,7 @@ import {
   Text,
   useBreakpointValue,
   useColorModeValue,
-  useDisclosure,
+  useDisclosure
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
