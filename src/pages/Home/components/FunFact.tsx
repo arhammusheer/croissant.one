@@ -1,11 +1,11 @@
-import { Stack, Text, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, Stack, Text, useColorModeValue } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { me } from "../../../me";
 
 const FunFact: React.FC = () => {
   const [currentFact, setCurrentFact] = useState(0);
-	const [randomFacts] = useState(me.facts || []);
+  const [randomFacts] = useState(me.facts || []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,25 +22,30 @@ const FunFact: React.FC = () => {
 
   return (
     <Stack
-      direction={"row"}
+      direction={{
+        base: "column",
+        md: "row",
+      }}
       wrap={"wrap"}
-      spacing={0}
+      spacing={2}
       w={"full"}
-      align={"center"}
       justify={"center"}
+      px={4}
     >
-      <Text
-        fontSize={"lg"}
-        color={useColorModeValue("brand.600", "brand.300")}
-        fontWeight={"bold"}
-        bg={useColorModeValue("brand.100", "brand.900")}
-        borderRadius={"xl"}
-        px={2}
-        border={"1px"}
-        borderColor={useColorModeValue("brand.200", "brand.600")}
-      >
-        Fun Fact
-      </Text>
+      <Flex>
+        <Text
+          fontSize={"lg"}
+          color={useColorModeValue("brand.600", "brand.300")}
+          fontWeight={"bold"}
+          bg={useColorModeValue("brand.100", "brand.900")}
+          borderRadius={"xl"}
+          px={2}
+          border={"1px"}
+          borderColor={useColorModeValue("brand.200", "brand.600")}
+        >
+          Fun Fact
+        </Text>
+      </Flex>
       <AnimatePresence mode={"wait"}>
         <motion.div
           key={currentFact}
@@ -52,7 +57,6 @@ const FunFact: React.FC = () => {
           <Text
             fontSize={"lg"}
             color={useColorModeValue("brand.800", "brand.100")}
-						px={4}
           >
             {randomFacts[currentFact]}
           </Text>
