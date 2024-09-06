@@ -115,10 +115,12 @@ const SingleSkill = ({
       <Stack
         direction={"row"}
         align={"center"}
-        bg={useColorModeValue("brand.100", "gray.900")}
-        px={2}
+        bg={useColorModeValue("brand.100", "brand.900")}
+        px={4}
         py={1}
         borderRadius={"xl"}
+        border={"2px"}
+        borderColor={useColorModeValue("brand.200", "brand.800")}
       >
         {icon && <Icon as={icon} />}
         <Heading as={"h3"} fontSize={"2xl"}>
