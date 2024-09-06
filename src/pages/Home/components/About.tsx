@@ -46,7 +46,7 @@ export const About = () => {
         w={"full"}
         bgGradient={useColorModeValue(
           "linear(to-b, brand.50, brand.200, brand.50)",
-          "linear(to-b, black, brand.800, black)",
+          "linear(to-b, brand.950, brand.800, brand.950)",
         )}
         align={"center"}
         justify={"center"}

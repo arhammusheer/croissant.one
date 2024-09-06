@@ -46,7 +46,7 @@ function App() {
 
   const nextTheme = extendTheme(theme, {
     colors: {
-      brand: baseTheme.colors[colorScheme],
+      brand: theme.colors[colorScheme],
     },
   });
 

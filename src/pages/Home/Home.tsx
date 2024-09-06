@@ -18,7 +18,7 @@ export const Home = () => {
     <Suspense fallback={<Loader />}>
       <Box
         scrollBehavior={"smooth"}
-        bg={useColorModeValue("brand.50", "black")}
+        bg={useColorModeValue("brand.50", "brand.950")}
       >
         <Navbar />
         <Hero />
