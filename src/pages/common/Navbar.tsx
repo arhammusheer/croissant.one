@@ -8,7 +8,7 @@ import {
   Text,
   useBreakpointValue,
   useColorModeValue,
-  useDisclosure
+  useDisclosure,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
@@ -144,37 +144,40 @@ const BottomSheet = ({
   };
 
   return (
-    <motion.div
+    <Stack
+      p={8}
+      divider={<StackDivider />}
+      spacing={4}
+      zIndex={-1}
+      w={"full"}
       initial={{ height: 0, opacity: 0, zIndex: -1 }}
       animate={{
         height: isOpen ? 500 : 0,
         opacity: isOpen ? 1 : 0,
+        zIndex: isOpen ? 1 : -1,
       }}
-      transition={{}}
+      as={motion.div}
     >
-      <Stack p={8} divider={<StackDivider />} spacing={4} zIndex={-1}>
-        {options.map((option) => (
-          <Box
-            role={"button"}
-            w={"full"}
-            key={option.name}
-            h={"full"}
-            as={Link}
-            to={isOpen ? option.href : ""}
-            offset={-500}
-            smooth={true}
-            cursor={isOpen ? "pointer" : "default"}
-            onClick={() => onClick(option.name)}
-            onKeyDown={(e: React.KeyboardEvent) =>
-              handleKeyDown(e, option.href, option.name)
-            }
-            tabIndex={isOpen ? 0 : -1} // Make focusable only when open
-          >
-            {option.name}
-          </Box>
-        ))}
-      </Stack>
-    </motion.div>
+      {options.map((option) => (
+        <Box
+          key={option.name}
+          role={"button"}
+          w={"full"}
+          as={Link}
+          to={isOpen ? option.href : ""}
+          offset={-500}
+          smooth={true}
+          cursor={isOpen ? "pointer" : "default"}
+          onClick={() => onClick(option.name)}
+          onKeyDown={(e: React.KeyboardEvent) =>
+            handleKeyDown(e, option.href, option.name)
+          }
+          tabIndex={isOpen ? 0 : -1} // Make focusable only when open
+        >
+          {option.name}
+        </Box>
+      ))}
+    </Stack>
   );
 };
 
