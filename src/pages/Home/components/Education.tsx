@@ -16,10 +16,11 @@ export const Education = () => {
     <Flex
       id={"education"}
       minH={"50vh"}
-      w={"full"}
       align={"center"}
       justify={"center"}
       direction={"column"}
+      maxW={"container.xl"}
+      w={"full"}
       p={{
         base: 8,
         md: 16,
