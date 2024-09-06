@@ -75,7 +75,7 @@ const SingleEducation = ({
       initial="hidden"
       variants={variants}
     >
-      <Stack direction={"column"}>
+      <Stack direction={"column"} tabIndex={0}>
         <Text
           as={"h5"}
           fontSize={"xl"}

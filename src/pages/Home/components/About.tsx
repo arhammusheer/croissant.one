@@ -46,7 +46,7 @@ export const About = () => {
         w={"full"}
         bgGradient={useColorModeValue(
           "linear(to-b, brand.50, brand.200, brand.50)",
-          "linear(to-b, black, brand.800, black)",
+          "linear(to-b, black, brand.800, black)"
         )}
         align={"center"}
         justify={"center"}
@@ -66,7 +66,7 @@ export const About = () => {
             md: 16,
           }}
         >
-          <GridItem>
+          <GridItem tabIndex={0}>
             <Heading
               fontWeight={"normal"}
               as={"h1"}
@@ -85,7 +85,7 @@ export const About = () => {
               </Text>
             </Heading>
           </GridItem>
-          <GridItem>
+          <GridItem tabIndex={0}>
             <Flex w={"full"} h={"full"} maxW={"600px"}>
               <Box>
                 <Heading as={"h2"} fontSize={"4xl"}>

@@ -38,6 +38,7 @@ export const Skills = () => {
           mt={8}
           wrap={"wrap"}
           columnGap={2}
+          tabIndex={0}
         >
           {me.skills.map((skill, index) => (
             <SingleSkill {...skill} key={skill.name} index={index} />

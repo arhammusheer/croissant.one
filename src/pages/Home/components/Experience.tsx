@@ -91,6 +91,7 @@ const SingleExperience = ({
         px={{ base: 0, md: 8 }}
         borderRadius={"xl"}
         spacing={4}
+        tabIndex={0}
       >
         <Stack spacing={0}>
           <Text
