@@ -75,6 +75,7 @@ export const Navbar = () => {
 
 const DesktopOptions = () => {
   const borderColor = useColorModeValue("brand.200", "brand.600");
+
   return (
     <Stack
       direction={"row"}
@@ -89,6 +90,7 @@ const DesktopOptions = () => {
           whileTap={{ scale: 0.9 }}
           key={option.name}
           style={{ height: "100%" }}
+          tabIndex={-1}
         >
           <Flex
             align={"center"}
@@ -98,13 +100,18 @@ const DesktopOptions = () => {
             cursor={"pointer"}
             px={3}
             h={"full"}
-            transition={"all 0.2s ease-in-out"}
+            tabIndex={0}  // Make focusable with tab
             onClick={() => trackClick(option.name, "Desktop")}
+            onKeyDown={(e) => handleKeyDown(e, option.href, option.name)}
             _hover={{
               backgroundColor: useColorModeValue("brand.50", "brand.700"),
               borderRadius: "xl",
               border: "1px",
               borderColor: borderColor,
+            }}
+            _focus={{
+              outline: "none",
+              boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.6)",  // Focus style
             }}
           >
             <Text
@@ -154,6 +161,8 @@ const BottomSheet = ({
             smooth={true}
             cursor={isOpen ? "pointer" : "default"}
             onClick={() => onClick(option.name)}
+            tabIndex={isOpen ? 0 : -1}  // Make focusable only when open
+            onKeyDown={(e) => isOpen && handleKeyDown(e, option.href, option.name)}
           >
             {option.name}
           </Box>
@@ -163,41 +172,32 @@ const BottomSheet = ({
   );
 };
 
+const handleKeyDown = (
+  e: React.KeyboardEvent,
+  href: string,
+  name: string
+) => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    document.getElementById(href)?.scrollIntoView({ behavior: "smooth" });
+    trackClick(name, "Keyboard");
+  }
+};
+
 const options = [
-  {
-    name: "Home",
-    href: "home",
-  },
-  {
-    name: "About",
-    href: "about",
-  },
-  {
-    name: "Education",
-    href: "education",
-  },
-  {
-    name: "Experience",
-    href: "experience",
-  },
-  {
-    name: "Projects",
-    href: "projects",
-  },
-  {
-    name: "Skills",
-    href: "skills",
-  },
-  {
-    name: "Contact",
-    href: "contact",
-  },
+  { name: "Home", href: "home" },
+  { name: "About", href: "about" },
+  { name: "Education", href: "education" },
+  { name: "Experience", href: "experience" },
+  { name: "Projects", href: "projects" },
+  { name: "Skills", href: "skills" },
+  { name: "Contact", href: "contact" },
 ];
 
 // Analytics
 const trackClick = (
   name: string,
-  variant: "Mobile" | "Desktop" = "Desktop",
+  variant: "Mobile" | "Desktop" | "Keyboard" = "Desktop"
 ) => {
   ReactGA.event({
     category: "Navigation",
