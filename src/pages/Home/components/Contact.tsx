@@ -29,17 +29,6 @@ export const Contact = () => {
         </Heading>
       </Box>
       <Box w={"full"}>
-        <Heading
-          as={"h3"}
-          fontSize={{
-            base: "2xl",
-            md: "3xl",
-          }}
-          mt={4}
-        >
-          I'll keep it simple.
-        </Heading>
-        <Text fontSize={"3xl"}>Here is my email</Text>
         <Text
           fontSize={{
             base: "3xl",
