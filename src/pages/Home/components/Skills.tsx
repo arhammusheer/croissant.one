@@ -16,7 +16,7 @@ import { me } from "../../../me";
 export const Skills = () => {
   return (
     <Flex
-      maxW={"100vw"}
+      maxW={"container.xl"}
       flexBasis={"auto"}
       id="skills"
       minH={"50vh"}
