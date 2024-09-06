@@ -329,7 +329,7 @@ export const me = {
       icon: FaNewspaper,
       uri: "Mohammad-Arham-Resume.pdf",
       hover: {
-        bg: ["red.500", "red.600"],
+        bg: ["brand.500", "brand.700"],
         color: "white",
       },
     },
@@ -338,7 +338,7 @@ export const me = {
       icon: FaGithub,
       uri: "https://github.com/arhammusheer",
       hover: {
-        bg: ["gray.900", "gray.600"],
+        bg: ["gray.900", "gray.800"],
         color: "white",
       },
     },
@@ -347,7 +347,7 @@ export const me = {
       icon: FaLinkedin,
       uri: "https://www.linkedin.com/in/mohammad-arham/",
       hover: {
-        bg: ["blue.400", "blue.700"],
+        bg: ["linkedin.500", "linkedin.700"],
         color: "white",
       },
     },
