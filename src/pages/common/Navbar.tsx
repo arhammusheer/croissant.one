@@ -143,11 +143,11 @@ const BottomSheet = ({
     trackClick(name, "Mobile");
   };
 
+  const borderColor = useColorModeValue("brand.200", "brand.600");
+
   return (
-    <Stack
-      p={8}
-      divider={<StackDivider />}
-      spacing={4}
+    <Box
+      p={isOpen ? 4 : 0}
       zIndex={-1}
       w={"full"}
       initial={{ height: 0, opacity: 0, zIndex: -1 }}
@@ -158,6 +158,17 @@ const BottomSheet = ({
       }}
       as={motion.div}
     >
+      <Stack
+        direction={"column"}
+        spacing={4}
+        divider={<StackDivider borderColor={borderColor} />}
+        align={"center"}
+        bg={useColorModeValue("brand.100", "brand.900")}
+        borderRadius={"xl"}
+        p={4}
+        border={"1px"}
+        borderColor={borderColor}
+        >
       {options.map((option) => (
         <Box
           key={option.name}
@@ -177,7 +188,9 @@ const BottomSheet = ({
           {option.name}
         </Box>
       ))}
-    </Stack>
+      </Stack>
+      
+    </Box>
   );
 };
 
