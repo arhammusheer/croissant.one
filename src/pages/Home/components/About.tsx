@@ -75,7 +75,7 @@ export const About = () => {
                 base: "3xl",
                 md: "4xl",
               }}
-              color={useColorModeValue("gray.800", "gray.100")}
+              color={useColorModeValue("brand.950", "brand.50")}
             >
               {me.bigHeading.black}{" "}
               <Text

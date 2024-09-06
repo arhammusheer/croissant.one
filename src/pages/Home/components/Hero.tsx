@@ -150,13 +150,16 @@ const Social = ({
       }}
       tabIndex={-1}
     >
+      {" "}
       <Stack
         direction={"row"}
         as={"a"}
         href={url}
         target={"_blank"}
         align={"center"}
-        bg={useColorModeValue("white", "gray.800")}
+        bg={useColorModeValue("brand.50", "brand.950")}
+        border={"1px"}
+        borderColor={useColorModeValue("brand.200", "brand.700")}
         px={4}
         py={1}
         rounded={"full"}

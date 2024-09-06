@@ -26,8 +26,8 @@ export const ThemeSwitcher = () => {
   const { onOpen, onClose, isOpen } = useDisclosure();
 
   // Popover styles
-  const popoverBg = useColorModeValue("white", "gray.800");
-  const popoverBorder = useColorModeValue("brand.200", "gray.900");
+  const popoverBg = useColorModeValue("white", "brand.950");
+  const popoverBorder = useColorModeValue("brand.200", "brand.800");
 
   // Icon button
   const iconButtonBorderColor = useColorModeValue("brand.100", "brand.700");
@@ -112,6 +112,7 @@ export const ThemeSwitcher = () => {
         bg={popoverBg}
         border={"1px"}
         borderColor={popoverBorder}
+        shadow={"lg"}
       >
         <PopoverBody py={3}>
           <Stack direction={"column"} spacing={1} align={"center"}>

@@ -97,7 +97,7 @@ const SingleExperience = ({
         <Stack spacing={0}>
           <Text
             fontSize={{ base: "md", md: "xl" }}
-            color={useColorModeValue("gray.600", "gray.400")}
+            color={useColorModeValue("brand.800", "brand.100")}
             mb={2}
           >
             {duration}

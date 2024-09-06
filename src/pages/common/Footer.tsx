@@ -10,7 +10,7 @@ export const Footer = () => {
         justify={"center"}
         direction={"column"}
         borderTop={"1px solid"}
-        borderTopColor={useColorModeValue("gray.200", "gray.700")}
+        borderTopColor={useColorModeValue("brand.200", "brand.700")}
       >
         <Text fontWeight={"bold"}>Made with ❤️ by arhammusheer</Text>
         <Text>

@@ -80,7 +80,7 @@ const SingleEducation = ({
         <Text
           as={"h5"}
           fontSize={"xl"}
-          color={useColorModeValue("gray.600", "gray.400")}
+          color={useColorModeValue("brand.800", "brand.100")}
           mb={2}
         >
           {graduation}
