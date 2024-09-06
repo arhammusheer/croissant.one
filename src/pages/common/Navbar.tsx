@@ -179,7 +179,7 @@ const handleKeyDown = (e: React.KeyboardEvent, href: string, name: string) => {
   if (e.key === "Enter" || e.key === " ") {
     e.preventDefault();
     document.getElementById(href)?.scrollIntoView({ behavior: "smooth" });
-    document.getElementById(href)?.focus();
+    document.getElementById(href)?.focus({ preventScroll: false });
     trackClick(name, "Keyboard");
   }
 };

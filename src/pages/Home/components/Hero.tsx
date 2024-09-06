@@ -24,8 +24,8 @@ export const Hero = () => {
     <Stack
       id={"home"}
       w={"full"}
-      minH={"90vh"}
-      height={{ base: "100%", md: "90vh" }}
+      minH={"85vh"}
+      height={{ base: "100%", md: "85vh" }}
       spacing={0}
       justifyContent={"center"}
       alignItems={"center"}
