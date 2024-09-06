@@ -82,7 +82,7 @@ const SingleProject = ({
     "linear(to-r, brand.50, whiteAlpha.700)",
     "linear(to-t, blackAlpha.900, blackAlpha.700)"
   );
-  const bg = useColorModeValue("brand.50", "gray.900");
+  const bg = useColorModeValue("white", "gray.900");
   return (
     <Stack
       direction={"column"}

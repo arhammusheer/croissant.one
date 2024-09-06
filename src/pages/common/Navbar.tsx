@@ -33,7 +33,7 @@ export const Navbar = () => {
         <Container maxW={"container.xl"}>
           <Flex
             justify={"space-between"}
-            bg={useColorModeValue("brand.50", "brand.900")}
+            bg={useColorModeValue("brand.100", "brand.900")}
             height={"64px"}
             px={3}
             rounded={"full"}
