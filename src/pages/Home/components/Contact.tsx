@@ -12,7 +12,6 @@ export const Contact = () => {
   return (
     <Flex
       id="contact"
-      minH={"50vh"}
       w={"full"}
       align={"center"}
       justify={"center"}

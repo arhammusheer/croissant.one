@@ -16,7 +16,6 @@ export const Experience = () => {
   return (
     <Flex
       id="experience"
-      minH={"50vh"}
       w={"full"}
       maxW={"container.xl"}
       align={"center"}

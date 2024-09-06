@@ -43,7 +43,7 @@ export const About = () => {
     >
       <Flex
         id="about"
-        minH={"60vh"}
+        minH={"500px"}
         w={"full"}
         maxW={"100vw"}
         bgGradient={useColorModeValue(

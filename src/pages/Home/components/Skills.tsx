@@ -19,7 +19,6 @@ export const Skills = () => {
       maxW={"container.xl"}
       flexBasis={"auto"}
       id="skills"
-      minH={"50vh"}
       align={"center"}
       justify={"center"}
       direction={"column"}

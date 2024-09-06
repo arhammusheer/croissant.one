@@ -15,7 +15,6 @@ export const Education = () => {
   return (
     <Flex
       id={"education"}
-      minH={"50vh"}
       align={"center"}
       justify={"center"}
       direction={"column"}

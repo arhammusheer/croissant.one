@@ -21,8 +21,8 @@ export const Projects = () => {
   return (
     <Flex
       id="projects"
-      minH={"100vh"}
       w={"full"}
+      maxW={"container.xl"}
       align={"center"}
       justify={"center"}
       direction={"column"}
