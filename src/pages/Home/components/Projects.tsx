@@ -77,7 +77,7 @@ const SingleProject = ({
 }) => {
   const overlay = useColorModeValue(
     "linear(to-r, brand.50, whiteAlpha.700)",
-    "linear(to-r, brand.900, blackAlpha.700)",
+    "linear(to-r, brand.900, blackAlpha.700)"
   );
   const bg = useColorModeValue("white", "brand.900");
   return (
@@ -114,7 +114,7 @@ const SingleProject = ({
           <Heading
             as={"h3"}
             fontSize={"2xl"}
-            color={useColorModeValue("brand.700", "white")}
+            color={useColorModeValue("brand.800", "white")}
           >
             {name}
           </Heading>
@@ -135,7 +135,11 @@ const SingleProject = ({
         </Stack>
         <Text>{description}</Text>
         <Box h={2} />
-        <Heading as={"h4"} fontSize={"lg"} color={"brand.600"}>
+        <Heading
+          as={"h4"}
+          fontSize={"lg"}
+          color={useColorModeValue("brand.800", "white")}
+        >
           What I did
         </Heading>
         <Text>{contribution}</Text>
@@ -174,9 +178,9 @@ const OutLink = ({ children, href }: { children: string; href: string }) => {
       target={"_blank"}
       rel={"noreferrer"}
       align={"center"}
-      color={"brand.500"}
+      color={useColorModeValue("brand.700", "brand.100")}
       _hover={{
-        color: useColorModeValue("brand.700", "brand.300"),
+        color: useColorModeValue("brand.600", "brand.300"),
         textDecoration: "underline",
       }}
     >
