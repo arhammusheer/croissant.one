@@ -7,6 +7,8 @@ const FunFact: React.FC = () => {
   const [currentFact, setCurrentFact] = useState(0);
   const [randomFacts] = useState(me.facts || []);
 
+  const funFactColor = useColorModeValue("brand.800", "brand.100");
+
   useEffect(() => {
     const interval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * randomFacts.length);
@@ -19,6 +21,7 @@ const FunFact: React.FC = () => {
   if (!randomFacts.length) {
     return <></>;
   }
+  
 
   return (
     <Stack
@@ -54,10 +57,7 @@ const FunFact: React.FC = () => {
           exit={{ opacity: 0, y: "-50%" }} // Exit animation
           transition={{ duration: 0.5 }} // Animation duration
         >
-          <Text
-            fontSize={"lg"}
-            color={useColorModeValue("brand.800", "brand.100")}
-          >
+          <Text fontSize={"lg"} color={funFactColor}>
             {randomFacts[currentFact]}
           </Text>
         </motion.div>
