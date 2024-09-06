@@ -18,6 +18,7 @@ import ReactGA from "react-ga4";
 import { FaMoon, FaSun, FaTimes } from "react-icons/fa";
 import { ColorSchemeContext } from "../../App";
 import { ITheme } from "../../me.interface";
+import { enableMultiTheme } from "../../me";
 
 // Recommended: Don't exceed 6 themes, overflow is not handled
 const themeOptions: ITheme[] = [
@@ -42,6 +43,25 @@ export const ThemeSwitcher = () => {
   const iconButtonColor = useColorModeValue("brand.500", "brand.200");
   const iconButtonHoverBg = useColorModeValue("brand.50", "brand.800");
   const iconButtonHoverBorder = useColorModeValue("brand.200", "brand.700");
+
+  // Disabled multiple themes
+  if (!enableMultiTheme) {
+    return (
+      <IconButton
+        aria-label="Toggle theme"
+        icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
+        variant={"ghost"}
+        color={iconButtonColor}
+        _hover={{
+          bg: iconButtonHoverBg,
+          border: "1px",
+          borderColor: iconButtonHoverBorder,
+        }}
+        rounded={"full"}
+        onClick={toggleColorMode}
+      />
+    );
+  }
 
   // Multiple themes
   return (

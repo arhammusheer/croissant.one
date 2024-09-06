@@ -24,10 +24,12 @@ import {
 } from "react-icons/si";
 
 import { IMe, ITheme } from "./me.interface";
-import { baseTheme } from "@chakra-ui/react";
 
 // Warning: Don't use "black" or "white" values
 export const themeColor: ITheme = "orange";
+
+// To disable support for multiple themes, set this value to `false`;
+export const enableMultiTheme: boolean = true;
 
 export const me = {
   name: "Mohammad Arham",
