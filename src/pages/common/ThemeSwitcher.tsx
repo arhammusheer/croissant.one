@@ -163,33 +163,40 @@ const ThemeOption = ({
 
   if (color === colorScheme) {
     return (
-      <motion.div
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        tabIndex={-1}
+      <Tooltip
+        label={`${colorMode === "light" ? "Dark" : "Light"} mode`}
+        aria-label={`${colorMode === "light" ? "Dark" : "Light"} mode`}
+        placement="left"
+        hasArrow
       >
-        <IconButton
-          role="button"
-          tabIndex={0}
-          aria-label="Toggle theme"
-          icon={
-            colorMode === "light" ? (
-              <FaSun tabIndex={-1} />
-            ) : (
-              <FaMoon tabIndex={-1} />
-            )
-          }
-          variant={"solid"}
-          color={iconButtonColor}
-          _hover={{
-            bg: iconButtonHoverBg,
-          }}
-          onKeyDown={handleKeyDown}
-          onClick={onClick}
-          rounded={"full"}
-          autoFocus
-        />
-      </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          tabIndex={-1}
+        >
+          <IconButton
+            role="button"
+            tabIndex={0}
+            aria-label="Toggle theme"
+            icon={
+              colorMode === "light" ? (
+                <FaSun tabIndex={-1} />
+              ) : (
+                <FaMoon tabIndex={-1} />
+              )
+            }
+            variant={"solid"}
+            color={iconButtonColor}
+            _hover={{
+              bg: iconButtonHoverBg,
+            }}
+            onKeyDown={handleKeyDown}
+            onClick={onClick}
+            rounded={"full"}
+            autoFocus
+          />
+        </motion.div>
+      </Tooltip>
     );
   }
 
