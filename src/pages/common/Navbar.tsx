@@ -25,7 +25,7 @@ export const Navbar = () => {
 
   const preventRightClick = (e: React.MouseEvent) => {
     e.preventDefault();
-  }
+  };
 
   return (
     <>
@@ -51,7 +51,7 @@ export const Navbar = () => {
               onContextMenu={preventRightClick}
             />
             {isMobile ? (
-              <Box>
+              <Flex align={"center"}>
                 <ThemeSwitcher />
                 <IconButton
                   aria-label="Open menu"
@@ -61,7 +61,7 @@ export const Navbar = () => {
                   rounded={"full"}
                   colorScheme="brand"
                 />
-              </Box>
+              </Flex>
             ) : (
               <DesktopOptions />
             )}
@@ -83,28 +83,37 @@ const DesktopOptions = () => {
       height={"full"}
     >
       {options.map((option) => (
-        <Flex
-          align={"center"}
+        <motion.div
+          whileHover={{ scale: 1.05, backgroundColor: "brand.200" }}
+          whileTap={{ scale: 0.9 }}
           key={option.name}
-          as={Link}
-          to={option.href}
-          smooth={true}
-          cursor={"pointer"}
-          px={3}
-          height={"full"}
-          _hover={{
-            bg: useColorModeValue("brand.100", "brand.600"),
-          }}
-          transition={"all 0.2s ease-in-out"}
-          onClick={() => trackClick(option.name, "Desktop")}
+          style={{ height: "100%" }}
         >
-          <Text
-            fontWeight={"bold"}
-            color={useColorModeValue("brand.700", "brand.100")}
+          <Flex
+            align={"center"}
+            as={Link}
+            to={option.href}
+            smooth={true}
+            cursor={"pointer"}
+            px={3}
+            h={"full"}
+            transition={"all 0.2s ease-in-out"}
+            onClick={() => trackClick(option.name, "Desktop")}
+            _hover={{
+              backgroundColor: useColorModeValue("brand.50", "brand.700"),
+              borderRadius: "md",
+              border: "1px",
+              borderColor: useColorModeValue("brand.200", "brand.600"),
+            }}
           >
-            {option.name}
-          </Text>
-        </Flex>
+            <Text
+              fontWeight={"bold"}
+              color={useColorModeValue("brand.800", "brand.50")}
+            >
+              {option.name}
+            </Text>
+          </Flex>
+        </motion.div>
       ))}
       <ThemeSwitcher />
     </Stack>
@@ -121,8 +130,8 @@ const BottomSheet = ({
   const onClick = (name: string) => {
     onClose();
     trackClick(name, "Mobile");
-  }
-  
+  };
+
   return (
     <motion.div
       initial={{ height: 0, opacity: 0, zIndex: -1 }}
@@ -185,7 +194,10 @@ const options = [
 ];
 
 // Analytics
-const trackClick = (name: string, variant: "Mobile" | "Desktop" = "Desktop") => {
+const trackClick = (
+  name: string,
+  variant: "Mobile" | "Desktop" = "Desktop"
+) => {
   ReactGA.event({
     category: "Navigation",
     action: "Click",

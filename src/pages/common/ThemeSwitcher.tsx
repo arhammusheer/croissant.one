@@ -10,11 +10,12 @@ import {
   Tooltip,
   useColorMode,
   useColorModeValue,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import ReactGA from "react-ga4";
-import { FaMoon, FaSun } from "react-icons/fa";
+import { FaMoon, FaSun, FaTimes } from "react-icons/fa";
 import { ColorSchemeContext } from "../../App";
 import { ITheme } from "../../me.interface";
 
@@ -30,24 +31,62 @@ const themeOptions: ITheme[] = [
 
 export const ThemeSwitcher = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const { onOpen, onClose, isOpen } = useDisclosure();
 
+  // Popover styles
   const popoverBg = useColorModeValue("white", "gray.800");
   const popoverBorder = useColorModeValue("brand.200", "gray.900");
 
+  // Icon button
+  const iconButtonBorderColor = useColorModeValue("brand.100", "brand.700");
+  const iconButtonColor = useColorModeValue("brand.500", "brand.200");
+  const iconButtonHoverBg = useColorModeValue("brand.50", "brand.800");
+  const iconButtonHoverBorder = useColorModeValue("brand.200", "brand.700");
+
   // Multiple themes
   return (
-    <Popover placement="bottom-end">
+    <Popover
+      placement="bottom"
+      isOpen={isOpen}
+      onOpen={onOpen}
+      onClose={onClose}
+      offset={[0, 16]}
+    >
       <PopoverTrigger>
-        <IconButton
-          aria-label="Toggle theme"
-          icon={colorMode === "light" ? <FaMoon /> : <FaSun />}
-          variant={"ghost"}
-          color={useColorModeValue("brand.500", "brand.200")}
-          _hover={{
-            bg: useColorModeValue("brand.100", "brand.900"),
-          }}
-          rounded={"full"}
-        />
+        <motion.div
+          whileHover={{ rotate: isOpen ? 0 : -22.5 }}
+          whileTap={{ rotate: 90 }}
+        >
+          {isOpen ? (
+            <IconButton
+              aria-label="Close theme options"
+              icon={<FaTimes />}
+              variant={"ghost"}
+              color={iconButtonColor}
+              _hover={{
+                bg: iconButtonHoverBg,
+                border: "1px",
+                borderColor: iconButtonHoverBorder,
+              }}
+              rounded={"full"}
+              border={isOpen ? "1px" : "0"}
+              borderColor={iconButtonBorderColor}
+            />
+          ) : (
+            <IconButton
+              aria-label="Toggle theme"
+              icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
+              variant={"ghost"}
+              color={iconButtonColor}
+              _hover={{
+                bg: iconButtonHoverBg,
+                border: "1px",
+                borderColor: iconButtonHoverBorder,
+              }}
+              rounded={"full"}
+            />
+          )}
+        </motion.div>
       </PopoverTrigger>
       <PopoverContent
         w={"auto"}
@@ -56,8 +95,8 @@ export const ThemeSwitcher = () => {
         border={"1px"}
         borderColor={popoverBorder}
       >
-        <PopoverBody>
-          <Stack direction={"row"} spacing={2}>
+        <PopoverBody py={3}>
+          <Stack direction={"column"} spacing={1} align={"center"}>
             {themeOptions.map((theme) => (
               <ThemeOption key={theme} color={theme} />
             ))}
@@ -86,8 +125,8 @@ const ThemeOption = ({ color }: { color: ITheme }) => {
       <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <IconButton
           aria-label="Toggle theme"
-          icon={colorMode === "light" ? <FaMoon /> : <FaSun />}
-          variant={"ghost"}
+          icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
+          variant={"solid"}
           color={useColorModeValue("brand.500", "brand.200")}
           _hover={{
             bg: useColorModeValue("brand.100", "brand.900"),
@@ -100,26 +139,32 @@ const ThemeOption = ({ color }: { color: ITheme }) => {
   }
 
   return (
-    <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-      <Tooltip label={color} aria-label={color}>
+    <motion.div
+      whileHover={{ scale: 1.1, rotate: colorMode === "light" ? 45 : -45 }}
+      whileTap={{ scale: 0.9, rotate: colorMode === "light" ? -45 : 45 }}
+    >
+      <Tooltip label={color} aria-label={color} placement="left">
         <Flex
           onClick={onClick}
           cursor={"pointer"}
           rounded={"full"}
-          p={2}
+          p={1}
           bg={color === colorScheme ? `${color}.200` : "transparent"}
+          _hover={{
+            bg: colorMode === "light" ? `${color}.100` : `${color}.700`,
+          }}
         >
           <Box
             bg={`${color}.200`}
-            w={3}
-            h={6}
+            w={4}
+            h={8}
             borderLeftRadius={"full"}
             borderRightRadius={"0"}
           />
           <Box
             bg={`${color}.700`}
-            w={3}
-            h={6}
+            w={4}
+            h={8}
             borderRightRadius={"full"}
             borderLeftRadius={"0"}
           />
