@@ -62,6 +62,7 @@ export const Hero = () => {
           }}
           src={me.image}
           border={"2px"}
+          borderColor={useColorModeValue("brand.400", "brand.600")}
           alt-text={"Profile picture"}
           alignSelf={{
             base: "center",
