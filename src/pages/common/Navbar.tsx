@@ -100,7 +100,7 @@ const DesktopOptions = () => {
             cursor={"pointer"}
             px={3}
             h={"full"}
-            tabIndex={0}  // Make focusable with tab
+            tabIndex={0} // Make focusable with tab
             onClick={() => trackClick(option.name, "Desktop")}
             onKeyDown={(e) => handleKeyDown(e, option.href, option.name)}
             _hover={{
@@ -111,7 +111,7 @@ const DesktopOptions = () => {
             }}
             _focus={{
               outline: "none",
-              boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.6)",  // Focus style
+              boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.6)", // Focus style
             }}
           >
             <Text
@@ -161,8 +161,7 @@ const BottomSheet = ({
             smooth={true}
             cursor={isOpen ? "pointer" : "default"}
             onClick={() => onClick(option.name)}
-            tabIndex={isOpen ? 0 : -1}  // Make focusable only when open
-            onKeyDown={(e) => isOpen && handleKeyDown(e, option.href, option.name)}
+            tabIndex={isOpen ? 0 : -1} // Make focusable only when open
           >
             {option.name}
           </Box>
@@ -172,14 +171,11 @@ const BottomSheet = ({
   );
 };
 
-const handleKeyDown = (
-  e: React.KeyboardEvent,
-  href: string,
-  name: string
-) => {
+const handleKeyDown = (e: React.KeyboardEvent, href: string, name: string) => {
   if (e.key === "Enter" || e.key === " ") {
     e.preventDefault();
     document.getElementById(href)?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(href)?.focus();
     trackClick(name, "Keyboard");
   }
 };
@@ -197,7 +193,7 @@ const options = [
 // Analytics
 const trackClick = (
   name: string,
-  variant: "Mobile" | "Desktop" | "Keyboard" = "Desktop"
+  variant: "Mobile" | "Desktop" | "Keyboard" = "Desktop",
 ) => {
   ReactGA.event({
     category: "Navigation",

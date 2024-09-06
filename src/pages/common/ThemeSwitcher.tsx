@@ -151,7 +151,9 @@ const ThemeOption = ({
     trackClick(color);
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement | HTMLButtonElement>) => {
+  const handleKeyDown = (
+    e: React.KeyboardEvent<HTMLDivElement | HTMLButtonElement>,
+  ) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       onClick();
@@ -160,12 +162,22 @@ const ThemeOption = ({
 
   if (color === colorScheme) {
     return (
-      <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} tabIndex={-1}>
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        tabIndex={-1}
+      >
         <IconButton
           role="button"
           tabIndex={0}
           aria-label="Toggle theme"
-          icon={colorMode === "light" ? <FaSun tabIndex={-1} /> : <FaMoon tabIndex={-1} />}
+          icon={
+            colorMode === "light" ? (
+              <FaSun tabIndex={-1} />
+            ) : (
+              <FaMoon tabIndex={-1} />
+            )
+          }
           variant={"solid"}
           color={iconButtonColor}
           _hover={{

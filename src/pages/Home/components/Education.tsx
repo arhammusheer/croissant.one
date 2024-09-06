@@ -24,6 +24,7 @@ export const Education = () => {
         base: 8,
         md: 16,
       }}
+      tabIndex={-1}
     >
       <Box w={"full"}>
         <Heading as={"h2"} fontSize={"3xl"}>

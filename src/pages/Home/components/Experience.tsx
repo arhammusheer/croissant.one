@@ -22,6 +22,7 @@ export const Experience = () => {
       justify={"center"}
       direction={"column"}
       p={8}
+      tabIndex={-1}
     >
       <Box w={"full"}>
         <Heading as={"h2"} fontSize={"3xl"} px={{ base: 0, md: 8 }}>

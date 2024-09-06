@@ -26,6 +26,7 @@ export const Skills = () => {
         base: 8,
         md: 16,
       }}
+      tabIndex={-1}
     >
       <Stack w={"full"} spacing={4}>
         <Heading as={"h2"} fontSize={"3xl"}>

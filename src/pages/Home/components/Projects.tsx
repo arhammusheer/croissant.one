@@ -30,6 +30,7 @@ export const Projects = () => {
         base: 8,
         md: 16,
       }}
+      tabIndex={-1}
     >
       <Box w={"full"}>
         <Heading as={"h2"} fontSize={"3xl"}>
@@ -76,7 +77,7 @@ const SingleProject = ({
 }) => {
   const overlay = useColorModeValue(
     "linear(to-r, brand.50, whiteAlpha.700)",
-    "linear(to-r, brand.900, blackAlpha.700)"
+    "linear(to-r, brand.900, blackAlpha.700)",
   );
   const bg = useColorModeValue("white", "brand.900");
   return (

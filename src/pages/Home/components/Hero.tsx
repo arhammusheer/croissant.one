@@ -39,6 +39,7 @@ export const Hero = () => {
       initial="hidden"
       animate="visible"
       variants={variants}
+      tabIndex={-1}
     >
       <Stack
         h={"full"}
