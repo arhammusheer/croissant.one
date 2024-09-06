@@ -44,10 +44,10 @@ export const Hero = () => {
       <Stack
         h={"full"}
         w={"full"}
-        bg={useColorModeValue("brand.100", "gray.900")}
+        bg={useColorModeValue("brand.100", "brand.900")}
         rounded={"3xl"}
         border={"1px"}
-        borderColor={useColorModeValue("brand.200", "gray.700")}
+        borderColor={useColorModeValue("brand.200", "brand.700")}
         p={{
           base: 4,
           md: 12,

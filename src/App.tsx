@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import { ANALYTICS_MEASUREMENT_ID } from "./pages/analytics";
 import { Home } from "./pages/Home/Home";
 import ReactGA from "react-ga4";
+import { baseTheme, ChakraProvider, extendTheme } from "@chakra-ui/react";
+import theme from "./theme";
+import { themeColor } from "./me";
 
 function App() {
   useEffect(() => {
@@ -30,7 +33,17 @@ function App() {
     ReactGA.send("pageview");
   }, []);
 
-  return <Home />;
+  const nextTheme = extendTheme(theme, {
+    colors: {
+      brand: baseTheme.colors[themeColor],
+    },
+  });
+
+  return (
+    <ChakraProvider theme={nextTheme}>
+      <Home />
+    </ChakraProvider>
+  );
 }
 
 export default App;
