@@ -18,13 +18,14 @@ export const Experience = () => {
       id="experience"
       minH={"50vh"}
       w={"full"}
+      maxW={"container.xl"}
       align={"center"}
       justify={"center"}
       direction={"column"}
       p={8}
       tabIndex={-1}
     >
-      <Box w={"full"}>
+      <Box>
         <Heading as={"h2"} fontSize={"3xl"} px={{ base: 0, md: 8 }}>
           Experience
         </Heading>
@@ -79,54 +80,47 @@ const SingleExperience = ({
   }, [controls, inView]);
 
   return (
-    <motion.div
+    <Stack
+      as={motion.div}
       ref={ref}
       animate={controls}
       initial="hidden"
       variants={variants}
+      direction={"column"}
+      justify={"center"}
+      pb={8}
+      px={{ base: 0, md: 8 }}
+      borderRadius={"xl"}
+      spacing={4}
+      tabIndex={0}
     >
-      <Stack
-        direction={"column"}
-        justify={"center"}
-        pb={8}
-        px={{ base: 0, md: 8 }}
-        borderRadius={"xl"}
-        spacing={4}
-        tabIndex={0}
-      >
-        <Stack spacing={0}>
-          <Text
-            fontSize={{ base: "md", md: "xl" }}
-            color={useColorModeValue("brand.800", "brand.100")}
-            mb={2}
-          >
-            {duration}
-          </Text>
-          <Heading as={"h3"} fontSize={{ base: "3xl", md: "4xl" }}>
-            {company}
-          </Heading>
-          <Text as={"h4"} fontSize={{ base: "2xl", md: "3xl" }}>
-            {position}
-          </Text>
-        </Stack>
-        <Heading as={"span"} fontSize={"xl"} fontWeight={"normal"} mr={2}>
-          {location}
+      <Stack spacing={0}>
+        <Text
+          fontSize={{ base: "md", md: "xl" }}
+          color={useColorModeValue("brand.800", "brand.100")}
+          mb={2}
+        >
+          {duration}
+        </Text>
+        <Heading as={"h3"} fontSize={{ base: "3xl", md: "4xl" }}>
+          {company}
         </Heading>
-
-        <Stack direction={"column"} spacing={2}>
-          {bullets.map((bullet) => (
-            <Heading
-              as={"h5"}
-              fontSize={"lg"}
-              fontWeight={"normal"}
-              key={bullet}
-            >
-              - {bullet}
-            </Heading>
-          ))}
-        </Stack>
+        <Text as={"h4"} fontSize={{ base: "2xl", md: "3xl" }}>
+          {position}
+        </Text>
       </Stack>
-    </motion.div>
+      <Heading as={"span"} fontSize={"xl"} fontWeight={"normal"} mr={2}>
+        {location}
+      </Heading>
+
+      <Stack direction={"column"} spacing={2}>
+        {bullets.map((bullet) => (
+          <Heading as={"h5"} fontSize={"lg"} fontWeight={"normal"} key={bullet}>
+            - {bullet}
+          </Heading>
+        ))}
+      </Stack>
+    </Stack>
   );
 };
 
