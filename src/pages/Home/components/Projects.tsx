@@ -175,9 +175,13 @@ const OutLink = ({ children, href }: { children: string; href: string }) => {
       rel={"noreferrer"}
       align={"center"}
       color={"brand.500"}
+      _hover={{
+        color: useColorModeValue("brand.700", "brand.300"),
+        textDecoration: "underline",
+      }}
     >
-      {children}&nbsp;
-      <Icon as={FiExternalLink} />
+      {children}
+      <Icon as={FiExternalLink} ml={1} />
     </Flex>
   );
 };
