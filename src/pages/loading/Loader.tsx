@@ -1,9 +1,9 @@
-import { Flex, Image } from "@chakra-ui/react";
+import { Flex, Image, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 export const Loader = () => {
   return (
-    <Flex minH={"100vh"} w={"full"} align={"center"} justify={"center"}>
+    <Flex minH={"100vh"} w={"full"} align={"center"} justify={"center"} bg={useColorModeValue("brand.50", "black")}>
       <motion.div
         animate={{
           rotate: [0, 375, 360],
