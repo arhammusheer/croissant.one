@@ -4,7 +4,7 @@ import {
   Heading,
   Stack,
   Text,
-  useColorModeValue
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
@@ -56,7 +56,7 @@ const SingleExperience = ({
   bullets: readonly string[];
   index?: number;
 }) => {
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({ triggerOnce: true });
   const controls = useAnimation();
 
   const variants = {
@@ -93,7 +93,11 @@ const SingleExperience = ({
         spacing={4}
       >
         <Stack spacing={0}>
-          <Text fontSize={{ base: "md", md: "xl" }} color={useColorModeValue("gray.600", "gray.400")} mb={2}>
+          <Text
+            fontSize={{ base: "md", md: "xl" }}
+            color={useColorModeValue("gray.600", "gray.400")}
+            mb={2}
+          >
             {duration}
           </Text>
           <Heading as={"h3"} fontSize={{ base: "3xl", md: "4xl" }}>
@@ -108,11 +112,16 @@ const SingleExperience = ({
         </Heading>
 
         <Stack direction={"column"} spacing={2}>
-        {bullets.map((bullet) => (
-          <Heading as={"h5"} fontSize={"lg"} fontWeight={"normal"} key={bullet}>
-            - {bullet}
-          </Heading>
-        ))}
+          {bullets.map((bullet) => (
+            <Heading
+              as={"h5"}
+              fontSize={"lg"}
+              fontWeight={"normal"}
+              key={bullet}
+            >
+              - {bullet}
+            </Heading>
+          ))}
         </Stack>
       </Stack>
     </motion.div>
@@ -128,6 +137,6 @@ const trackInView = (inView: boolean, label: string) => {
       label: label,
     });
   }
-}
+};
 
 export default Experience;

@@ -8,7 +8,7 @@ import {
   Image,
   Stack,
   Text,
-  useColorModeValue
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -76,7 +76,7 @@ const SingleProject = ({
 }) => {
   const overlay = useColorModeValue(
     "linear(to-r, brand.50, whiteAlpha.700)",
-    "linear(to-t, blackAlpha.900, blackAlpha.700)"
+    "linear(to-t, blackAlpha.900, blackAlpha.700)",
   );
   const bg = useColorModeValue("white", "gray.900");
   return (
@@ -123,7 +123,13 @@ const SingleProject = ({
           >
             {name}
           </Heading>
-          <Image src={image} h={"50px"} w={"50px"} borderRadius={"xl"} objectFit={"cover"} />
+          <Image
+            src={image}
+            h={"50px"}
+            w={"50px"}
+            borderRadius={"xl"}
+            objectFit={"cover"}
+          />
         </Flex>
         <Stack direction={"row"} spacing={2} my={2} wrap={"wrap"}>
           {links.map((link) => (

@@ -7,7 +7,7 @@ import {
   shouldForwardProp,
   Stack,
   Text,
-  useColorModeValue
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { isValidMotionProp, motion } from "framer-motion";
 import ReactGA from "react-ga4";
@@ -79,7 +79,10 @@ export const Hero = () => {
             color={useColorModeValue("brand.600", "gray.100")}
           >
             Hi, I'm{" "}
-            <Box as={"span"} color={useColorModeValue("brand.900", "brand.100")}>
+            <Box
+              as={"span"}
+              color={useColorModeValue("brand.900", "brand.100")}
+            >
               {me.name}
             </Box>
           </Heading>
@@ -133,7 +136,7 @@ const Social = ({
 
   const onClick = () => {
     trackSocial(name);
-  }
+  };
 
   return (
     <ChakraBox
@@ -176,8 +179,7 @@ const trackSocial = (name: string) => {
     category: "Social",
     action: "Clicked",
     label: name,
-    
   });
-}
+};
 
 export default Hero;

@@ -16,7 +16,10 @@ const Contact = lazy(() => import("./components/Contact"));
 export const Home = () => {
   return (
     <Suspense fallback={<Loader />}>
-      <Box scrollBehavior={"smooth"} bg={useColorModeValue("brand.50", "black")}>
+      <Box
+        scrollBehavior={"smooth"}
+        bg={useColorModeValue("brand.50", "black")}
+      >
         <Navbar />
         <Hero />
         <About />

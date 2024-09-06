@@ -197,7 +197,7 @@ const options = [
 // Analytics
 const trackClick = (
   name: string,
-  variant: "Mobile" | "Desktop" = "Desktop"
+  variant: "Mobile" | "Desktop" = "Desktop",
 ) => {
   ReactGA.event({
     category: "Navigation",

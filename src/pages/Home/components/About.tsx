@@ -13,7 +13,7 @@ import { useInView } from "react-intersection-observer";
 import { me } from "../../../me";
 
 export const About = () => {
-  const [ref, inView] = useInView();
+  const { ref, inView } = useInView({ triggerOnce: true });
   const controls = useAnimation();
 
   const variants = {
@@ -46,7 +46,7 @@ export const About = () => {
         w={"full"}
         bgGradient={useColorModeValue(
           "linear(to-b, brand.50, brand.200, brand.50)",
-          "linear(to-b, black, brand.800, black)"
+          "linear(to-b, black, brand.800, black)",
         )}
         align={"center"}
         justify={"center"}
@@ -76,7 +76,7 @@ export const About = () => {
               }}
               color={useColorModeValue("gray.800", "gray.100")}
             >
-              {me.bigHeading.black} {" "}
+              {me.bigHeading.black}{" "}
               <Text
                 as={"span"}
                 color={useColorModeValue("brand.600", "brand.300")}
@@ -91,7 +91,11 @@ export const About = () => {
                 <Heading as={"h2"} fontSize={"4xl"}>
                   About
                 </Heading>
-                <Text fontSize={"xl"} mt={4} align={{ base: "left", md: "justify" }}>
+                <Text
+                  fontSize={"xl"}
+                  mt={4}
+                  align={{ base: "left", md: "justify" }}
+                >
                   {me.about}
                 </Text>
               </Box>

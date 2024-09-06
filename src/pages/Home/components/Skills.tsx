@@ -4,7 +4,7 @@ import {
   Icon,
   Stack,
   Text,
-  useColorModeValue
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
@@ -75,7 +75,7 @@ const SingleSkill = ({
   icon?: IconType;
   index?: number;
 }) => {
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({ triggerOnce: true });
   const controls = useAnimation();
 
   const variants = {

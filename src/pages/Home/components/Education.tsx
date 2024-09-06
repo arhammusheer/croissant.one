@@ -1,4 +1,11 @@
-import { Box, Flex, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Stack,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
@@ -45,7 +52,7 @@ const SingleEducation = ({
   graduation: string;
   awards: readonly string[];
 }) => {
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({ triggerOnce: true });
   const controls = useAnimation();
 
   const variants = {
