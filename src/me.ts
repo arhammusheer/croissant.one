@@ -55,7 +55,11 @@ export const me = {
     "I spent about 6 hours on the theme button alone.",
     "Try opening the console and see if you can find any easter eggs.",
     "I mentor students and help fix projects during HackUMass.",
-    
+    "I've spent too long on the animations and theme system of this website.",
+    "I'm a huge fan of the show Silicon Valley.",
+    "Sometimes, I redesign parts of this website just for fun. Call it a 'perpetual beta.'",
+    "This website has a dark mode because, let’s be real we're programmers.",
+    "Did you know, You can hire me?",
   ],
   subtitle: "Computer Engineering Student & Backend Developer",
   tagline:
