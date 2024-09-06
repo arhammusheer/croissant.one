@@ -1,9 +1,8 @@
 import {
   Container,
-  Divider,
   Stack,
   Text,
-  useColorModeValue,
+  useColorModeValue
 } from "@chakra-ui/react";
 
 export const Footer = () => {

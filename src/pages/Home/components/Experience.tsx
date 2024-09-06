@@ -2,17 +2,15 @@ import {
   Box,
   Flex,
   Heading,
-  Icon,
   Stack,
   Text,
-  useColorModeValue,
+  useColorModeValue
 } from "@chakra-ui/react";
-import { useAnimation, motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
-import { IconType } from "react-icons";
+import ReactGA from "react-ga4";
 import { useInView } from "react-intersection-observer";
 import { me } from "../../../me";
-import ReactGA from "react-ga4";
 
 export const Experience = () => {
   return (

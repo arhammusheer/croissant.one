@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Box,
   Container,
   Flex,
@@ -10,14 +9,14 @@ import {
   Text,
   useBreakpointValue,
   useColorModeValue,
-  useDisclosure,
+  useDisclosure
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import ReactGA from "react-ga4";
 import { FaHamburger } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { me } from "../../me";
-import { motion } from "framer-motion";
 import { ThemeSwitcher } from "./ThemeSwitcher";
-import ReactGA from "react-ga4";
 
 export const Navbar = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });

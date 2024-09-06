@@ -1,8 +1,8 @@
 import { Box, Flex, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react";
-import { me } from "../../../me";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { me } from "../../../me";
 
 export const Education = () => {
   return (

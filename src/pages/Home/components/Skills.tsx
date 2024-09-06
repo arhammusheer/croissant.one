@@ -1,18 +1,17 @@
 import {
-  Box,
   Flex,
   Heading,
   Icon,
   Stack,
   Text,
-  useColorModeValue,
+  useColorModeValue
 } from "@chakra-ui/react";
-import { useAnimation, motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { IconType } from "react-icons";
+import { TbArrowWaveLeftUp } from "react-icons/tb";
 import { useInView } from "react-intersection-observer";
 import { me } from "../../../me";
-import { TbArrowWaveLeftUp } from "react-icons/tb";
 
 export const Skills = () => {
   return (

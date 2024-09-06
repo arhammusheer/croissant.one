@@ -1,4 +1,4 @@
-import { Flex, Image, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { Flex, Image, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 export const Loader = () => {

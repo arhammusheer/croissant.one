@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Box,
   chakra,
   Heading,
@@ -8,12 +7,12 @@ import {
   shouldForwardProp,
   Stack,
   Text,
-  useColorModeValue,
+  useColorModeValue
 } from "@chakra-ui/react";
 import { isValidMotionProp, motion } from "framer-motion";
+import ReactGA from "react-ga4";
 import { IconType } from "react-icons";
 import { me } from "../../../me";
-import ReactGA from "react-ga4";
 
 export const Hero = () => {
   const variants = {

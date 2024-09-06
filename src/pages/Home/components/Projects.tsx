@@ -1,7 +1,5 @@
 import {
-  Avatar,
   Box,
-  Button,
   Flex,
   Grid,
   GridItem,
@@ -10,17 +8,15 @@ import {
   Image,
   Stack,
   Text,
-  useColorModeValue,
+  useColorModeValue
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { me } from "../../../me";
+import { useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
-import { useEffect, useState } from "react";
+import { me } from "../../../me";
 
 export const Projects = () => {
-  const [projects, setProjects] = useState(me.projects);
-  const [showCount, setShowCount] = useState(4);
-  const [showMore, setShowMore] = useState(true);
+  const [projects] = useState(me.projects);
 
   return (
     <Flex
