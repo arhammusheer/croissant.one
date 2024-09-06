@@ -7,6 +7,7 @@ import {
   PopoverContent,
   PopoverTrigger,
   Stack,
+  Tooltip,
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -17,8 +18,15 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { ColorSchemeContext } from "../../App";
 import { ITheme } from "../../me.interface";
 
-// Recommended: Don't exceed 5 themes, overflow is not handled
-const themeOptions: ITheme[] = ["orange", "purple", "blue", "red", "cyan"];
+// Recommended: Don't exceed 6 themes, overflow is not handled
+const themeOptions: ITheme[] = [
+  "orange",
+  "purple",
+  "blue",
+  "red",
+  "cyan",
+  "green",
+];
 
 export const ThemeSwitcher = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -93,28 +101,30 @@ const ThemeOption = ({ color }: { color: ITheme }) => {
 
   return (
     <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-      <Flex
-        onClick={onClick}
-        cursor={"pointer"}
-        rounded={"full"}
-        p={2}
-        bg={color === colorScheme ? `${color}.200` : "transparent"}
-      >
-        <Box
-          bg={`${color}.200`}
-          w={3}
-          h={6}
-          borderLeftRadius={"full"}
-          borderRightRadius={"0"}
-        />
-        <Box
-          bg={`${color}.700`}
-          w={3}
-          h={6}
-          borderRightRadius={"full"}
-          borderLeftRadius={"0"}
-        />
-      </Flex>
+      <Tooltip label={color} aria-label={color}>
+        <Flex
+          onClick={onClick}
+          cursor={"pointer"}
+          rounded={"full"}
+          p={2}
+          bg={color === colorScheme ? `${color}.200` : "transparent"}
+        >
+          <Box
+            bg={`${color}.200`}
+            w={3}
+            h={6}
+            borderLeftRadius={"full"}
+            borderRightRadius={"0"}
+          />
+          <Box
+            bg={`${color}.700`}
+            w={3}
+            h={6}
+            borderRightRadius={"full"}
+            borderLeftRadius={"0"}
+          />
+        </Flex>
+      </Tooltip>
     </motion.div>
   );
 };

@@ -33,13 +33,13 @@ export const Navbar = () => {
         <Container maxW={"container.xl"}>
           <Flex
             justify={"space-between"}
-            bg={useColorModeValue("brand.50", "gray.800")}
+            bg={useColorModeValue("brand.50", "brand.900")}
             height={"64px"}
             px={3}
             rounded={"full"}
             align={"center"}
             border={"1px"}
-            borderColor={useColorModeValue("brand.200", "gray.700")}
+            borderColor={useColorModeValue("brand.200", "brand.700")}
           >
             <Image
               src={"/assets/croissant.svg"}
@@ -93,14 +93,14 @@ const DesktopOptions = () => {
           px={3}
           height={"full"}
           _hover={{
-            bg: useColorModeValue("brand.100", "gray.600"),
+            bg: useColorModeValue("brand.100", "brand.600"),
           }}
           transition={"all 0.2s ease-in-out"}
           onClick={() => trackClick(option.name, "Desktop")}
         >
           <Text
             fontWeight={"bold"}
-            color={useColorModeValue("brand.700", "gray.100")}
+            color={useColorModeValue("brand.700", "brand.100")}
           >
             {option.name}
           </Text>
