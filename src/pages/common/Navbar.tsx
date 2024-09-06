@@ -101,7 +101,7 @@ const DesktopOptions = () => {
             onClick={() => trackClick(option.name, "Desktop")}
             _hover={{
               backgroundColor: useColorModeValue("brand.50", "brand.700"),
-              borderRadius: "md",
+              borderRadius: "xl",
               border: "1px",
               borderColor: useColorModeValue("brand.200", "brand.600"),
             }}
