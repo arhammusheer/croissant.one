@@ -50,7 +50,7 @@ The template now supports color themes!
 You can set your default theme in `src/me.ts` in `themeColor` variable.
 
 You can also select allowed themes which the user can switch to.
-To modify the list go to `src/pages/common/ThemeSwitcher.tsx` and modify the `themeOptions` list.
+To modify the list go to `src/me.ts` and modify the `multiThemeOptions` list.
 
 #### Supported Themes
 - gray

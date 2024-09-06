@@ -18,17 +18,7 @@ import ReactGA from "react-ga4";
 import { FaMoon, FaSun, FaTimes } from "react-icons/fa";
 import { ColorSchemeContext } from "../../App";
 import { ITheme } from "../../me.interface";
-import { enableMultiTheme } from "../../me";
-
-// Recommended: Don't exceed 6 themes, overflow is not handled
-const themeOptions: ITheme[] = [
-  "orange",
-  "purple",
-  "blue",
-  "red",
-  "cyan",
-  "green",
-];
+import { enableMultiTheme, multiThemeOptions } from "../../me";
 
 export const ThemeSwitcher = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -117,7 +107,7 @@ export const ThemeSwitcher = () => {
       >
         <PopoverBody py={3}>
           <Stack direction={"column"} spacing={1} align={"center"}>
-            {themeOptions.map((theme) => (
+            {multiThemeOptions.map((theme) => (
               <ThemeOption key={theme} color={theme} />
             ))}
           </Stack>

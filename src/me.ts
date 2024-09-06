@@ -28,6 +28,16 @@ import { IMe, ITheme } from "./me.interface";
 // Warning: Don't use "black" or "white" values
 export const themeColor: ITheme = "orange";
 
+// Multiple theme options
+export const multiThemeOptions: ITheme[] = [
+  "orange",
+  "purple",
+  "blue",
+  "red",
+  "cyan",
+  "green",
+];
+
 // To disable support for multiple themes, set this value to `false`;
 export const enableMultiTheme: boolean = true;
 
