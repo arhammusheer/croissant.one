@@ -17,6 +17,7 @@ export const Contact = () => {
       align={"center"}
       justify={"center"}
       direction={"column"}
+      maxW={"container.xl"}
       p={{
         base: 8,
         md: 16,
