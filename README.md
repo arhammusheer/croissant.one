@@ -64,7 +64,7 @@ To modify the list go to `src/pages/common/ThemeSwitcher.tsx` and modify the `th
 - pink
 - blackAlpha (Not Recommended)
 
-![Example Themes](https://github.com/user-attachments/assets/0805b7ea-3aef-49e7-988c-5ae1a06f865f)
+![Example Themes](https://github.com/user-attachments/assets/87a0287d-dbec-4f92-b0fb-924ab049e7f1)
 
 
 ## License
