@@ -1,4 +1,4 @@
-import { Box, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 import { lazy, Suspense } from "react";
 import { Loader } from "../loading/Loader";
 import FunFact from "./components/FunFact";
@@ -17,9 +17,11 @@ const Contact = lazy(() => import("./components/Contact"));
 export const Home = () => {
   return (
     <Suspense fallback={<Loader />}>
-      <Box
+      <Flex
         scrollBehavior={"smooth"}
         bg={useColorModeValue("brand.50", "brand.950")}
+        direction={"column"}
+        align={"center"}
       >
         <Navbar />
         <Hero />
@@ -31,7 +33,7 @@ export const Home = () => {
         <Skills />
         <Contact />
         <Footer />
-      </Box>
+      </Flex>
     </Suspense>
   );
 };

@@ -39,11 +39,13 @@ export const About = () => {
       animate={controls}
       initial={"hidden"}
       variants={variants}
+      style={{ width: "100%" }}
     >
       <Flex
         id="about"
         minH={"60vh"}
         w={"full"}
+        maxW={"100vw"}
         bgGradient={useColorModeValue(
           "linear(to-b, brand.50, brand.200, brand.50)",
           "linear(to-b, brand.950, brand.800, brand.950)",
@@ -57,6 +59,7 @@ export const About = () => {
             base: "repeat(1, 1fr)",
             md: "repeat(2, 1fr)",
           }}
+          maxW={"container.xl"}
           gap={{
             base: 12,
             md: 6,

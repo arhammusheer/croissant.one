@@ -40,6 +40,7 @@ export const Hero = () => {
       animate="visible"
       variants={variants}
       tabIndex={-1}
+      maxW={"container.xl"}
     >
       <Stack
         h={"full"}
