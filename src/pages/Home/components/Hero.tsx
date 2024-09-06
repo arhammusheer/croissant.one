@@ -147,6 +147,7 @@ const Social = ({
       whileTap={{
         scale: 0.95,
       }}
+      tabIndex={-1}
     >
       <Stack
         direction={"row"}
@@ -163,6 +164,7 @@ const Social = ({
           bg: useColorModeValue(hover.bg[0], hover.bg[1]),
           color: hover.color,
         }}
+        tabIndex={0}
         onClick={onClick}
       >
         <Icon as={icon} />
