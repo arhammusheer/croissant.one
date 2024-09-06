@@ -21,7 +21,6 @@ const FunFact: React.FC = () => {
   if (!randomFacts.length) {
     return <></>;
   }
-  
 
   return (
     <Stack
