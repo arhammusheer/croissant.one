@@ -124,9 +124,9 @@ const ThemeOption = ({ color }: { color: ITheme }) => {
   const onClick = () => {
     if (color === colorScheme) {
       toggleColorMode();
-      console.log("toggleColorMode");
+    } else {
+      setColorScheme(color);
     }
-    setColorScheme(color);
     trackClick(color);
   };
 

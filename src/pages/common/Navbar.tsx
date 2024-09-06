@@ -9,7 +9,7 @@ import {
   Text,
   useBreakpointValue,
   useColorModeValue,
-  useDisclosure
+  useDisclosure,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
@@ -21,6 +21,7 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 export const Navbar = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const borderColor = useColorModeValue("brand.200", "brand.700");
 
   const preventRightClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -38,7 +39,7 @@ export const Navbar = () => {
             rounded={"full"}
             align={"center"}
             border={"1px"}
-            borderColor={useColorModeValue("brand.200", "brand.700")}
+            borderColor={borderColor}
           >
             <Image
               src={"/assets/croissant.svg"}
@@ -73,6 +74,7 @@ export const Navbar = () => {
 };
 
 const DesktopOptions = () => {
+  const borderColor = useColorModeValue("brand.200", "brand.600");
   return (
     <Stack
       direction={"row"}
@@ -83,7 +85,7 @@ const DesktopOptions = () => {
     >
       {options.map((option) => (
         <motion.div
-          whileHover={{ scale: 1.05, backgroundColor: "brand.200" }}
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           key={option.name}
           style={{ height: "100%" }}
@@ -102,7 +104,7 @@ const DesktopOptions = () => {
               backgroundColor: useColorModeValue("brand.50", "brand.700"),
               borderRadius: "xl",
               border: "1px",
-              borderColor: useColorModeValue("brand.200", "brand.600"),
+              borderColor: borderColor,
             }}
           >
             <Text
