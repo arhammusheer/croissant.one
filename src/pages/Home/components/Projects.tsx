@@ -76,9 +76,9 @@ const SingleProject = ({
 }) => {
   const overlay = useColorModeValue(
     "linear(to-r, brand.50, whiteAlpha.700)",
-    "linear(to-t, blackAlpha.900, blackAlpha.700)",
+    "linear(to-r, brand.900, blackAlpha.700)",
   );
-  const bg = useColorModeValue("white", "gray.900");
+  const bg = useColorModeValue("white", "brand.900");
   return (
     <Stack
       direction={"column"}
@@ -87,7 +87,7 @@ const SingleProject = ({
       borderRadius={"2xl"}
       border={"1px"}
       bg={bg}
-      borderColor={useColorModeValue("brand.200", "gray.700")}
+      borderColor={useColorModeValue("brand.200", "brand.700")}
       as={motion.div}
       justify={"center"}
       whileHover={{
@@ -111,7 +111,7 @@ const SingleProject = ({
       <Box
         h={"full"}
         w={"full"}
-        bgGradient={backgroundImage ? overlay : ""}
+        bgGradient={overlay}
         p={4}
         borderRadius={"2xl"}
       >
