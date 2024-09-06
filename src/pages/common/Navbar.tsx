@@ -152,6 +152,7 @@ const BottomSheet = ({
       <Stack p={8} divider={<StackDivider />} spacing={4} zIndex={-1}>
         {options.map((option) => (
           <Box
+            role={"button"}
             w={"full"}
             key={option.name}
             h={"full"}
@@ -161,6 +162,9 @@ const BottomSheet = ({
             smooth={true}
             cursor={isOpen ? "pointer" : "default"}
             onClick={() => onClick(option.name)}
+            onKeyDown={(e: React.KeyboardEvent) =>
+              handleKeyDown(e, option.href, option.name)
+            }
             tabIndex={isOpen ? 0 : -1} // Make focusable only when open
           >
             {option.name}
