@@ -93,7 +93,7 @@ export const Navbar = () => {
 };
 
 const DesktopOptions = () => {
-  const borderColor = useColorModeValue("brand.200", "brand.600");
+  const borderColor = useColorModeValue("brand.200", "brand.500");
 
   return (
     <Stack
@@ -102,6 +102,7 @@ const DesktopOptions = () => {
       align={"center"}
       justify={"center"}
       height={"full"}
+      py={1}
     >
       {options.map((option) => (
         <motion.div
@@ -117,14 +118,17 @@ const DesktopOptions = () => {
             smooth={true}
             cursor={"pointer"}
             px={3}
+            borderRadius={"lg"}
             h={"full"}
             tabIndex={0} // Make focusable with tab
             onClick={() => trackClick(option.name, "Desktop")}
             onKeyDown={(e) => handleKeyDown(e, option.href, option.name)}
             _hover={{
-              backgroundColor: useColorModeValue("brand.50", "brand.700"),
+              backgroundColor: useColorModeValue("brand.50", "brand.600"),
               border: "1px",
               borderColor: borderColor,
+              // Transition effect
+              transition: "background-color 0.25s",
             }}
             _focus={{
               outline: "none",

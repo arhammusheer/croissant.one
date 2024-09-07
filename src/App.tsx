@@ -1,7 +1,7 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { createContext, useEffect, useState } from "react";
 import ReactGA from "react-ga4";
-import { themeColor } from "./me";
+import { enableMultiTheme, themeColor } from "./me";
 import { ITheme } from "./me.interface";
 import { ANALYTICS_MEASUREMENT_ID } from "./pages/analytics";
 import { Home } from "./pages/Home/Home";
@@ -17,7 +17,7 @@ export const ColorSchemeContext = createContext<{
 });
 
 function App() {
-  const savedTheme = localStorage.getItem("themeColor") as ITheme | null;
+  const savedTheme = enableMultiTheme ? localStorage.getItem("themeColor") as ITheme : themeColor;
   const [colorScheme, setColorScheme] = useState(savedTheme || themeColor);
   useEffect(() => {
     // Console logs to people who are poking around
