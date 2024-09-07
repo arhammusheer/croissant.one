@@ -34,7 +34,7 @@ export const multiThemeOptions: ITheme[] = [
   "purple",
   "blue",
   "red",
-  "cyan",
+  "pink",
   "green",
 ];
 
