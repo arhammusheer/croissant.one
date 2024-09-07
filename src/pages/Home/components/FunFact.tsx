@@ -5,14 +5,15 @@ import { me } from "../../../me";
 
 const FunFact: React.FC = () => {
   const [currentFact, setCurrentFact] = useState(0);
-  const [randomFacts] = useState(me.facts || []);
+  const [randomFacts] = useState(
+    me.facts?.sort(() => Math.random() - 0.5) || []
+  );
 
   const funFactColor = useColorModeValue("brand.800", "brand.100");
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * randomFacts.length);
-      setCurrentFact(randomIndex);
+      setCurrentFact((prev) => (prev + 1) % randomFacts.length);
     }, 5000);
 
     return () => clearInterval(interval);
