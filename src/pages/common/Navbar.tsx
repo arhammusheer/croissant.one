@@ -213,7 +213,9 @@ const BottomSheet = ({
                 onClick={() => onClick(option.name)}
                 onKeyDown={(e: React.KeyboardEvent) => {
                   handleKeyDown(e, option.href, option.name);
-                  onClose();
+                  if (e.key === "Escape") {
+                    onClose();
+                  }
                 }}
                 border={"1px"}
                 borderColor="transparent"
