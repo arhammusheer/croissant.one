@@ -64,7 +64,7 @@ export const me = {
   ],
   subtitle: "Computer Engineering Student",
   tagline:
-    "I loves to build fun high quality experiences and continuously learn new things.",
+    "I love to build fun high quality experiences and continuously learn new things.",
   bigHeading: {
     black: "I make things",
     blue: "for the web",
