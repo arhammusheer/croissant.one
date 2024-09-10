@@ -1,4 +1,5 @@
 import {
+  Box,
   Drawer,
   DrawerBody,
   DrawerContent,
@@ -144,6 +145,7 @@ const DesktopOptions = () => {
           </Flex>
         </motion.div>
       ))}
+      <Box w={2} />
       <ThemeSwitcher />
     </Stack>
   );
