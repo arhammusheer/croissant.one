@@ -35,8 +35,8 @@ const FunFact: React.FC = () => {
       justify={"center"}
       px={4}
     >
-      <Flex>
         <Text
+          maxW={"fit-content"}
           fontSize={"lg"}
           color={useColorModeValue("brand.600", "brand.300")}
           fontWeight={"bold"}
@@ -48,7 +48,6 @@ const FunFact: React.FC = () => {
         >
           Fun Fact
         </Text>
-      </Flex>
       <AnimatePresence mode={"wait"}>
         <motion.div
           key={currentFact}
