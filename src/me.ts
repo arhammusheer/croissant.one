@@ -62,7 +62,7 @@ export const me = {
     "This website has a dark mode because, let’s be real we're programmers.",
     "Did you know, You can hire me?",
   ],
-  subtitle: "Computer Engineering Student & Backend Developer",
+  subtitle: "Computer Engineering Student",
   tagline:
     "I am a computer engineering student who loves to build fun high quality experiences and continuously learn new things.",
   bigHeading: {
