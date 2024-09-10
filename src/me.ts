@@ -46,6 +46,7 @@ export const me = {
   // Facts are optional
   facts: [
     "You can use this website as your portfolio too. If you need help just ask!",
+    "Did you know, You can hire me?",
     "This website is fully navigable with a keyboard.",
     "I also build PCBs and make hardware projects.",
     "You can change your color scheme by clicking the top right icon.",
@@ -60,7 +61,6 @@ export const me = {
     "I'm a huge fan of the show Silicon Valley.",
     "Sometimes, I redesign parts of this website just for fun. Call it a 'perpetual beta.'",
     "This website has a dark mode because, let’s be real we're programmers.",
-    "Did you know, You can hire me?",
   ],
   subtitle: "Computer Engineering Student",
   tagline:
