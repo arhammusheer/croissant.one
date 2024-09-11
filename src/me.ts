@@ -1,4 +1,3 @@
-
 import { DiScrum } from "react-icons/di";
 import {
   FaDocker,
@@ -21,7 +20,7 @@ import {
   SiMongodb,
   SiPostgresql,
   SiPython,
-  SiTypescript
+  SiTypescript,
 } from "react-icons/si";
 
 import { IMe, ITheme } from "./me.interface";
@@ -163,7 +162,7 @@ export const me = {
       description:
         "An always-connected IoT device which lets me track when the next bus will leave my stop, helping me save time and plan better every morning.",
       contribution:
-        "I built the entire IoT device from scratch using an ESP32, wrote a relay server in Node.js, and pulled data from the UMass Transit API to display the next bus time.",
+        "I built the entire IoT device from scratch using an ESP32, Arduino, and wrote a relay server in Node.js, and pulled data from the UMass Transit API to display the next bus time.",
       technologies: [
         "Node.js",
         "TypeScript",
@@ -172,9 +171,15 @@ export const me = {
         "C++",
         "Google Cloud",
       ],
-      links: [{ name: "Image", uri: "/assets/bus-tracker.jpg" }],
-      image: "/assets/bus-tracker.jpg",
-      backgroundImage: "/assets/bus-tracker.jpg",
+      links: [
+        { name: "Image", uri: "/assets/bus-tracker.png" },
+        {
+          name: "Write Up",
+          uri: "https://github.com/arhammusheer/bus-tracker",
+        },
+      ],
+      image: "/assets/bus-tracker.png",
+      backgroundImage: "/assets/bus-tracker.png",
     },
     {
       name: "Croissant Paste It",
