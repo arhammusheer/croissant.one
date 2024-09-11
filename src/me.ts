@@ -1,3 +1,4 @@
+
 import { DiScrum } from "react-icons/di";
 import {
   FaDocker,
@@ -45,37 +46,37 @@ export const me = {
   name: "Mohammad Arham",
   // Facts are optional
   facts: [
-    "You can use this website as your portfolio too. If you need help just ask!",
-    "Did you know, You can hire me?",
+    "You can use this website as your portfolio too. If you need help, just ask!",
+    "Did you know? You can hire me!",
     "This website is fully navigable with a keyboard.",
     "I also build PCBs and make hardware projects.",
     "You can change your color scheme by clicking the top right icon.",
     "Kubernetes and croissants are my two favorite things—both require finesse.",
-    "I built my own bus tracker display so i'm never late in the morning.",
+    "I built my own bus tracker display, so I'm never late in the morning.",
     "I track temperature and humidity in my room and have 3 months of data. Ask me what I found!",
-    "Try clicking on random things, you might find some fun animations.",
+    "Try clicking on random things; you might find some fun animations.",
     "I spent about 6 hours on the theme button alone.",
     "Try opening the console and see if you can find any easter eggs.",
     "I mentor students and help fix projects during HackUMass.",
     "I've spent too long on the animations and theme system of this website.",
     "I'm a huge fan of the show Silicon Valley.",
     "Sometimes, I redesign parts of this website just for fun. Call it a 'perpetual beta.'",
-    "This website has a dark mode because, let’s be real we're programmers.",
+    "This website has a dark mode because, let’s be real, we're programmers.",
   ],
   subtitle: "Computer Engineering Student",
   tagline:
-    "I love to build fun high quality experiences and continuously learn new things.",
+    "I love to build fun, high-quality experiences and continuously learn new things.",
   bigHeading: {
     black: "I make things",
     blue: "for the web",
   },
   about:
-    "Senior Computer Engineering student who strives for high quality hardware and software experiences. I love making fun projects and build stuff I like to use myself. Oh and here is a croissant for you 🥐!",
+    "Senior Computer Engineering student who strives for high-quality hardware and software experiences. I love making fun projects and building stuff I like to use myself. Oh, and here is a croissant for you 🥐!",
   location: "Amherst, MA",
   image: "/assets/arhammusheer.jpeg",
   education: [
     {
-      degree: "Bachelors of Science",
+      degree: "Bachelor of Science",
       major: "Computer Engineering",
       school: "University of Massachusetts Amherst",
       graduation: "December 2024",
@@ -89,9 +90,9 @@ export const me = {
       position: "Engineering Co-op, Platform as a Service",
       duration: "Jan 2023 - June 2023",
       bullets: [
-        "Worked on an internal CLI tool using Golang and Kubernetes to automate the deployment and management of infrastructure, resulting in a significant reduction in deployment time and increased efficiency in managing resources",
-        "Collaborated with developers across teams and followed Scrum and Agile practices to deliver features and fix bugs in a timely manner",
-        "Wrote an internal documentation chatbot using semantic search and GPT4 API which intended to increase productivity across teams",
+        "Worked on an internal CLI tool using Golang and Kubernetes to automate the deployment and management of infrastructure, resulting in a significant reduction in deployment time and increased efficiency in managing resources.",
+        "Collaborated with developers across teams and followed Scrum and Agile practices to deliver features and fix bugs in a timely manner.",
+        "Wrote an internal documentation chatbot using semantic search and GPT-4 API, which intended to increase productivity across teams.",
       ],
     },
     {
@@ -103,7 +104,7 @@ export const me = {
         "Led the backend development pipeline and managed a team of 2 interns.",
         "Developed the backend API and audio content delivery service using a microservices architecture on the Google Cloud Platform.",
         "Developed a CMS dashboard and a supporting management API from scratch for content and user management and permissions using React.",
-        "Hosted the fully scalable serverless API on GCP Cloud run using docker, cloud builds, and cloud run which supported up to 200 concurrent users in production.",
+        "Hosted the fully scalable serverless API on GCP Cloud Run using Docker, cloud builds, and Cloud Run, which supported up to 200 concurrent users in production.",
       ],
     },
     {
@@ -114,7 +115,7 @@ export const me = {
       bullets: [
         "Provided phone and in-person support for classroom technical issues.",
         "Supported the upkeep and maintenance of computer labs managed by IT.",
-        "Notify and resolve any issues affecting workflows in computer labs using a ticket system.",
+        "Notified and resolved any issues affecting workflows in computer labs using a ticket system.",
       ],
     },
     {
@@ -134,9 +135,9 @@ export const me = {
     {
       name: "AudioShelf",
       description:
-        "A mobile app with over 2k users to discover audiobooks in 30 languages and summarize them in 5 minutes",
+        "A mobile app with over 2k users to discover audiobooks in 30 languages and summarize them in 5 minutes.",
       contribution:
-        "I built the backend infrastructure for the app including authentication systems, OAuth Scope and a REST API. I also built an internal CMS dashboard to manage content publishing and translations.",
+        "I built the backend infrastructure for the app, including authentication systems, OAuth scope, and a REST API. I also built an internal CMS dashboard to manage content publishing and translations.",
       technologies: [
         "Node.js",
         "Express",
@@ -160,9 +161,9 @@ export const me = {
     {
       name: "Bus Tracker IoT",
       description:
-        "An always connected IoT device which let's me track when the next bus will leave my stop helping me save time and plan better every morning.",
+        "An always-connected IoT device which lets me track when the next bus will leave my stop, helping me save time and plan better every morning.",
       contribution:
-        "I built the entire IoT device from scratch using an ESP32, Write a relay server in Node.js and pulled data from the UMass Transit API to display the next bus time.",
+        "I built the entire IoT device from scratch using an ESP32, wrote a relay server in Node.js, and pulled data from the UMass Transit API to display the next bus time.",
       technologies: [
         "Node.js",
         "TypeScript",
@@ -180,7 +181,7 @@ export const me = {
       description:
         "Ever wanted a place to dump some text and share it with someone or yourself on another device? Me too! So I built an app for your pasting needs.",
       contribution:
-        "I designed and wrote the app in Typescript with backend in Node.js and Express and the frontend in React.js. I also deployed the app on railway.app.",
+        "I designed and wrote the app in TypeScript with backend in Node.js and Express and the frontend in React.js. I also deployed the app on railway.app.",
       technologies: ["Node.js", "Express", "React", "TypeScript", "Railway"],
       links: [
         {
@@ -197,9 +198,9 @@ export const me = {
     {
       name: "Lord of the Lunchroom",
       description:
-        "A project for HackUMass which let 2 people in a cowboy duel smart hats to see who wins the table in the wochester dining hall. The project won the funnest hack award.",
+        "A project for HackUMass which lets 2 people in a cowboy duel smart hats to see who wins the table in the Worcester dining hall. The project won the 'Funnest Hack' award.",
       contribution:
-        "I wrote the code for the matchmaking server and the arduino smart hats which used infrared technology as guns and detectors and a displays to show the match status.",
+        "I wrote the code for the matchmaking server and the Arduino smart hats, which used infrared technology as guns and detectors, and displays to show the match status.",
       image: "/assets/lord-of-the-lunchroom.jpg",
       backgroundImage: "/assets/lord-of-the-lunchroom.jpg",
       technologies: ["Node.js", "JavaScript", "ESP8266", "Arduino", "C++"],
@@ -213,7 +214,7 @@ export const me = {
     },
     {
       name: "Croissant.one (This Website)",
-      description: "A website to showcase my projects and resume",
+      description: "A website to showcase my projects and resume.",
       contribution:
         "I built the entire website from scratch using React.js, TypeScript, and Chakra UI and deployed it on Vercel.",
       technologies: ["React", "Typescript", "Chakra-UI", "Vercel"],
@@ -231,7 +232,7 @@ export const me = {
     },
     {
       name: "Dad API",
-      description: "A REST API to get dad jokes and pickup lines",
+      description: "A REST API to get dad jokes and pickup lines.",
       contribution:
         "I built the entire API from scratch using Node.js and Express and deployed it on Google Cloud Run.",
       technologies: ["Node.js", "Express", "Google Cloud", "Docker"],
@@ -255,25 +256,10 @@ export const me = {
       ],
       image: "/assets/dad.png",
     },
-    // {
-    //   name: "Loud Noises",
-    //   description:
-    //     "A web app to play loud noises when you're in the same chat room as them. Press the big red button to play a list of sounds on their device. No registration required.",
-    //   contribution:
-    //     "Built a full stack app with socket.io and deployed it on Heroku.",
-    //   technologies: ["Node.js", "Express", "Socket.io", "Heroku", "Bootstrap"],
-    //   links: [
-    //     {
-    //       name: "Website",
-    //       uri: "https://loudnoises.herokuapp.com/",
-    //     },
-    //   ],
-    //   image: "/assets/big-red-button.svg",
-    // },
   ],
   skills: [
     {
-      name: "Typescript",
+      name: "TypeScript",
       icon: SiTypescript,
     },
     {
@@ -297,7 +283,7 @@ export const me = {
       icon: HiChip,
     },
     {
-      name: "Clang",
+      name: "C",
       icon: SiC,
     },
     {
@@ -312,7 +298,6 @@ export const me = {
       name: "Docker",
       icon: FaDocker,
     },
-
     {
       name: "Google Cloud",
       icon: SiGooglecloud,
