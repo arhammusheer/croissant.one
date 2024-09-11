@@ -13,6 +13,7 @@ import { HiChip } from "react-icons/hi";
 import {
   SiAmazonaws,
   SiC,
+  SiGnubash,
   SiGo,
   SiGooglecloud,
   SiJavascript,
@@ -20,8 +21,7 @@ import {
   SiMongodb,
   SiPostgresql,
   SiPython,
-  SiShell,
-  SiTypescript,
+  SiTypescript
 } from "react-icons/si";
 
 import { IMe, ITheme } from "./me.interface";
@@ -276,7 +276,7 @@ export const me = {
     },
     {
       name: "Bash/Shell",
-      icon: SiShell,
+      icon: SiGnubash,
     },
     {
       name: "Embedded Systems",
