@@ -1,7 +1,7 @@
 # Croissant Portfolio
 
-[!TIP]
-Website now has multi theme support. Scroll down to [Theme](#color-theme) section to check it out!
+> [!TIP]
+> Website now has multi theme support. Scroll down to [Theme](#color-theme) section to check it out!
 
 Hey there, This is my personal portfolio website I designed from scratch
 
