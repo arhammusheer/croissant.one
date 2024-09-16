@@ -92,8 +92,9 @@ const SingleEducation = ({
           {degree} in {major}
         </Text>
 
-        {awards && <Box h={"10px"} />}
+        {awards && awards.length > 0 && <Box h={"10px"} />}
         {awards &&
+          awards.length > 0 &&
           awards.map((award) => (
             <Heading
               as={"h5"}

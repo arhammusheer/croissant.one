@@ -25,7 +25,7 @@ interface IEducation {
   major: string;
   school: string;
   graduation: string;
-  awards: string[];
+  awards?: string[];
 }
 
 interface IExperience {
