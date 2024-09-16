@@ -31,7 +31,7 @@ export const Contact = () => {
       <Box w={"full"}>
         <Text
           fontSize={{
-            base: "3xl",
+            base: "2xl",
             md: "4xl",
           }}
           mt={8}
