@@ -72,12 +72,12 @@ const SingleProject = ({
     name: string;
     uri: string;
   }[];
-  image: string;
+  image?: string;
   backgroundImage?: string;
 }) => {
   const overlay = useColorModeValue(
     "linear(to-r, brand.50, whiteAlpha.700)",
-    "linear(to-r, brand.900, blackAlpha.700)",
+    "linear(to-r, brand.900, blackAlpha.700)"
   );
   const bg = useColorModeValue("white", "brand.900");
   return (
@@ -118,13 +118,15 @@ const SingleProject = ({
           >
             {name}
           </Heading>
-          <Image
-            src={image}
-            h={"50px"}
-            w={"50px"}
-            borderRadius={"xl"}
-            objectFit={"cover"}
-          />
+          {image && (
+            <Image
+              src={image}
+              h={"50px"}
+              w={"50px"}
+              borderRadius={"xl"}
+              objectFit={"cover"}
+            />
+          )}
         </Flex>
         <Stack direction={"row"} spacing={2} my={2} wrap={"wrap"}>
           {links.map((link) => (

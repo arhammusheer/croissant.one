@@ -42,7 +42,7 @@ interface IProject {
   contribution: string;
   technologies: string[];
   links: ILink[];
-  image: string;
+  image?: string;
   backgroundImage?: string;
 }
 
