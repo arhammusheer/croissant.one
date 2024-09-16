@@ -51,7 +51,7 @@ const SingleEducation = ({
   major: string;
   school: string;
   graduation: string;
-  awards: readonly string[];
+  awards?: readonly string[];
 }) => {
   const [ref, inView] = useInView({ triggerOnce: true });
   const controls = useAnimation();
@@ -92,12 +92,18 @@ const SingleEducation = ({
           {degree} in {major}
         </Text>
 
-        <Box h={"10px"} />
-        {awards.map((award) => (
-          <Heading as={"h5"} fontSize={"xl"} fontWeight={"normal"} key={award}>
-            {award}
-          </Heading>
-        ))}
+        {awards && <Box h={"10px"} />}
+        {awards &&
+          awards.map((award) => (
+            <Heading
+              as={"h5"}
+              fontSize={"xl"}
+              fontWeight={"normal"}
+              key={award}
+            >
+              {award}
+            </Heading>
+          ))}
       </Stack>
     </motion.div>
   );
