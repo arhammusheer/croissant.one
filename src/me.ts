@@ -79,7 +79,7 @@ export const me = {
       major: "Computer Engineering",
       school: "University of Massachusetts Amherst",
       graduation: "December 2024",
-      awards: ["Chancellor's Award: $12,000"],
+      awards: ["Coursework: Networked Embedded Systems, Synthesis & Verification, Computer Architecture, Cryptography, Math for Machine Learning, Systems Programming, Hardware Organization, Security Engineering, Embedded Systems, Linear Algebra"],
     },
   ],
   experience: [
