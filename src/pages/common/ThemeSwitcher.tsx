@@ -15,10 +15,10 @@ import {
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import ReactGA from "react-ga4";
-import { FaMoon, FaSun, FaTimes } from "react-icons/fa";
+import { FaMoon, FaPaintBrush, FaSun, FaTimes } from "react-icons/fa";
 import { ColorSchemeContext } from "../../App";
-import { ITheme } from "../../me.interface";
 import { enableMultiTheme, multiThemeOptions } from "../../me";
+import { ITheme } from "../../me.interface";
 
 export const ThemeSwitcher = () => {
   const { setColorScheme, colorScheme } = useContext(ColorSchemeContext);
@@ -93,7 +93,15 @@ export const ThemeSwitcher = () => {
               role="button"
               tabIndex={0}
               aria-label="Toggle theme"
-              icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
+              icon={
+                enableMultiTheme ? (
+                  <FaPaintBrush />
+                ) : colorMode === "light" ? (
+                  <FaSun />
+                ) : (
+                  <FaMoon />
+                )
+              }
               variant={"ghost"}
               color={iconButtonColor}
               _hover={{
@@ -153,7 +161,7 @@ const ThemeOption = ({
   };
 
   const handleKeyDown = (
-    e: React.KeyboardEvent<HTMLDivElement | HTMLButtonElement>,
+    e: React.KeyboardEvent<HTMLDivElement | HTMLButtonElement>
   ) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
