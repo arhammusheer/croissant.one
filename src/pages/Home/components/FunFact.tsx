@@ -1,4 +1,4 @@
-import { Stack, Text, useColorModeValue } from "@chakra-ui/react";
+import { Stack, Text, Tooltip, useColorModeValue } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { me } from "../../../me";
@@ -68,9 +68,19 @@ const FunFact: React.FC = () => {
           exit={{ opacity: 0, y: "-50%" }} // Exit animation
           transition={{ duration: 0.5 }} // Animation duration
         >
-          <Text fontSize={"lg"} color={funFactColor} onClick={onClick}>
-            {randomFacts[currentFact]}
-          </Text>
+          <Tooltip
+            label={"Click for next fun fact"}
+            aria-label={"Click for next fun fact"}
+          >
+            <Text
+              fontSize={"lg"}
+              color={funFactColor}
+              onClick={onClick}
+              cursor={"pointer"}
+            >
+              {randomFacts[currentFact]}
+            </Text>
+          </Tooltip>
         </motion.div>
       </AnimatePresence>
     </Stack>
