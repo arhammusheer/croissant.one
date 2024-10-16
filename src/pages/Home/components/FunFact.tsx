@@ -71,6 +71,7 @@ const FunFact: React.FC = () => {
           <Tooltip
             label={"Click for next fun fact"}
             aria-label={"Click for next fun fact"}
+            hasArrow
           >
             <Text
               fontSize={"lg"}
