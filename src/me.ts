@@ -1,5 +1,6 @@
 import { DiScrum } from "react-icons/di";
 import {
+  FaAws,
   FaDocker,
   FaGit,
   FaGithub,
@@ -10,7 +11,6 @@ import {
 } from "react-icons/fa";
 import { HiChip } from "react-icons/hi";
 import {
-  SiAmazonaws,
   SiC,
   SiGnubash,
   SiGo,
@@ -20,7 +20,7 @@ import {
   SiMongodb,
   SiPostgresql,
   SiPython,
-  SiTypescript,
+  SiTypescript
 } from "react-icons/si";
 
 import { IMe, ITheme } from "./me.interface";
@@ -321,7 +321,7 @@ export const me = {
     },
     {
       name: "AWS",
-      icon: SiAmazonaws,
+      icon: FaAws,
     },
     {
       name: "Git",
